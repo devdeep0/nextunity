@@ -9,7 +9,7 @@ if (!clientId) {
   throw new Error("No client ID provided");
 }
 
- const client = createThirdwebClient({
+const client = createThirdwebClient({
   clientId: clientId,
 });
 
@@ -18,7 +18,7 @@ const adminAccount = privateKeyToAccount({
   client,
 });
 
- async function verifyTelegram(signature: string, message: string) {
+async function verifyTelegram(signature: string, message: string) {
   const metadata = JSON.parse(message);
 
   if (!metadata.expiration || metadata.expiration < Date.now()) {
@@ -42,7 +42,8 @@ const adminAccount = privateKeyToAccount({
 
   return metadata.username;
 }
- async function POST(request: NextRequest) {
+
+export async function POST(request: NextRequest) {
   const { payload } = await request.json();
   const { signature, message } = JSON.parse(payload);
 
