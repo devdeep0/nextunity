@@ -1,6 +1,6 @@
+import { NextRequest, NextResponse } from "next/server";
 import { privateKeyToAccount } from "thirdweb/wallets";
 import { verifySignature } from "thirdweb/auth";
-import { NextRequest, NextResponse } from "next/server";
 import { createThirdwebClient } from "thirdweb";
 
 async function getClient() {
@@ -20,7 +20,7 @@ async function getAdminAccount(client: any) {
   });
 }
 
- async function verifyTelegram(signature: string, message: string) {
+async function verifyTelegram(signature: string, message: string) {
   const client = await getClient();
   const adminAccount = await getAdminAccount(client);
 
