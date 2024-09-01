@@ -2,8 +2,8 @@
 
 import { useEffect } from "react";
 import { useSearchParams } from "next/navigation";
-
-export default function Unity2Page() {
+import { Suspense } from "react";
+ function Unity2Page() {
   const searchParams = useSearchParams();
 
   useEffect(() => {
@@ -24,4 +24,11 @@ export default function Unity2Page() {
   }, [searchParams]);
 
   return null; // No UI for this page
+}
+export default function UnityPage2() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <Unity2Page />
+    </Suspense>
+  );
 }
