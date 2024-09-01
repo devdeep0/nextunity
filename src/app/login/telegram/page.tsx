@@ -34,7 +34,7 @@ export default function TelegramLogin({
             disabled={isLoading}
             className="w-full"
           >
-            {isLoading && selectedGame === "unity" ? "Redirecting..." : "Continue to Unity Game 1"}
+            {isLoading && selectedGame === "unity" ? "Redirecting..." : "Base Game "}
           </button>
           <button 
             onClick={() => handleRedirect("unity2")}
