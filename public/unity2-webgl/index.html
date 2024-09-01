@@ -26,17 +26,17 @@
     </div>
     <div id="unity-fullscreen-button" style="display: none"></div>
     <script type="module">
-            const hideFullScreenButton = "true";
+            const hideFullScreenButton = "";
             const buildUrl = "Build";
-            const loaderUrl = buildUrl + "/EmptyTelegram.loader.js";
+            const loaderUrl = buildUrl + "/BaseTeli.loader.js";
             const config = {
-              dataUrl: buildUrl + "/EmptyTelegram.data",
-              frameworkUrl: buildUrl + "/EmptyTelegram.framework.js",
-              codeUrl: buildUrl + "/EmptyTelegram.wasm",
+              dataUrl: buildUrl + "/BaseTeli.data",
+              frameworkUrl: buildUrl + "/BaseTeli.framework.js",
+              codeUrl: buildUrl + "/BaseTeli.wasm",
               streamingAssetsUrl: "StreamingAssets",
               companyName: "thirdweb",
               productName: "Unity SDK Telegram Example",
-              productVersion: "0.1",
+              productVersion: "1.8",
             };
 
             const container = document.querySelector("#unity-container");
