@@ -1,9 +1,10 @@
 "use client";
+
 import { useEffect } from "react";
-import { useRouter } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 
 export default function UnityPage() {
-  const router = useRouter();
+  const searchParams = useSearchParams();
 
   useEffect(() => {
     const container = document.createElement("div");
@@ -11,7 +12,7 @@ export default function UnityPage() {
     document.body.appendChild(container);
 
     const iframe = document.createElement("iframe");
-    iframe.src = "/unity-webgl/index.html" + window.location.search;
+    iframe.src = `/unity-webgl/index.html?${searchParams.toString()}`;
     iframe.style.border = "none";
     iframe.style.width = "100%";
     iframe.style.height = "100vh";
@@ -20,7 +21,7 @@ export default function UnityPage() {
     return () => {
       document.body.removeChild(container);
     };
-  }, []);
+  }, [searchParams]);
 
   return null; // No UI for this page
 }
