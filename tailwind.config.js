@@ -1,3 +1,5 @@
+const { title } = require('process');
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./pages/**/*.{js,ts,jsx,tsx}",
@@ -5,7 +7,11 @@ module.exports = {
   "./app/**/*.{ts,tsx}",
   "./src/**/*.{ts,tsx}",],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily:{
+        title:["Staatliches", "sans-serif"]
+      }
+    },
   },
   plugins: [],
 }

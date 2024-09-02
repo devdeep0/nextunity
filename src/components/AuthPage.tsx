@@ -14,32 +14,29 @@ const GameSelectionUI: React.FC<GameSelectionUIProps> = ({ isLoading, selectedGa
         <div className='flex flex-col gap-5'>
             <div className='flex flex-col gap-2'>
             <div className='flex pt-28 justify-between  dark:text-white text-2xl text-white'>
-                <div className=''>New game</div>
-                <div>-&gt;</div>
+                <div className='font-title'>New game</div>
+                <div className='font-title'>-&gt;</div>
             </div>
-            <div className='dark:text-white text-white text-sm'>play the same game with your friends and find the fun</div>
+            <div className='dark:text-white text-white text-sm font-title'>play the same game with your friends and find the fun</div>
             </div>
-            <div className='flex'>
-            <div className='h-[204px] w-[168px] rounded-[14px] backdrop-blur-md p-1  bg-opacity-30 bg-green-400 border border-white/40'>
-            <div className='h-[204px] w-[168px] rounded-[14px] bg-white'></div>
-            </div>
+            <div className="flex overflow-x-auto w-full space-x-4 scroll-snap-x snap-mandatory">
+                <button 
+                onClick={() => onGameSelect("unity")}
+                disabled={isLoading}
+                >
+                    <div className="h-[204px] w-[168px] rounded-[14px] bg-transparent shrink-0 bg-center " style={{backgroundImage: `url('/gameimg/Game1.png')`}}></div>
+                </button>
+                <button 
+                onClick={() => onGameSelect("unity2")}
+                disabled={isLoading}
                 
+                >
+                    <div className="h-[204px] w-[168px] rounded-[14px] bg-transparent shrink-0 bg-center " style={{backgroundImage: `url('/gameimg/Game2.png')`}}></div>
+                </button>
+                    <div className="h-[204px] w-[168px] rounded-[14px] bg-transparent shrink-0 bg-center " style={{backgroundImage: `url('/gameimg/GameImages.png')`}}></div>
             </div>
         </div>  
-        <button 
-            onClick={() => onGameSelect("unity")}
-            disabled={isLoading}
-            className="w-full px-4 py-2 text-white bg-blue-500 rounded hover:bg-blue-600 disabled:bg-blue-300"
-          >
-            {isLoading && selectedGame === "unity" ? "Redirecting..." : "Base Game"}
-          </button>
-          <button 
-            onClick={() => onGameSelect("unity2")}
-            disabled={isLoading}
-            className="w-full px-4 py-2 text-white bg-blue-500 rounded hover:bg-blue-600 disabled:bg-blue-300"
-          >
-            {isLoading && selectedGame === "unity2" ? "Redirecting..." : "Continue to Unity Game 2"}
-          </button>
+        
     </main>
     </>
   );
