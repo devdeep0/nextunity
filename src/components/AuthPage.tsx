@@ -11,7 +11,7 @@ const GameSelectionUI: React.FC<GameSelectionUIProps> = ({ isLoading, selectedGa
     <>
     <Header/>
     <main className='h-screen w-screen dark:bg-gradient-to-t p-5 from-[#0B4034] to-[#010601]  bg-gradient-to-t from-[#0B4034] to-[#010601]'>
-        <div className='flex flex-col'>
+        <div className='flex flex-col gap-5'>
             <div className='flex flex-col gap-2'>
             <div className='flex pt-28 justify-between  dark:text-white text-2xl text-white'>
                 <div className=''>New game</div>
@@ -20,9 +20,26 @@ const GameSelectionUI: React.FC<GameSelectionUIProps> = ({ isLoading, selectedGa
             <div className='dark:text-white text-white text-sm'>play the same game with your friends and find the fun</div>
             </div>
             <div className='flex'>
-                <div className='h-[204px] w-[168px] rounded-[14px] bg-green-400 '></div>
+            <div className='h-[204px] w-[168px] rounded-[14px] backdrop-blur-md p-1  bg-opacity-30 bg-green-400 border border-white/40'>
+            <div className='h-[204px] w-[168px] rounded-[14px] bg-white'></div>
             </div>
-        </div>    
+                
+            </div>
+        </div>  
+        <button 
+            onClick={() => onGameSelect("unity")}
+            disabled={isLoading}
+            className="w-full px-4 py-2 text-white bg-blue-500 rounded hover:bg-blue-600 disabled:bg-blue-300"
+          >
+            {isLoading && selectedGame === "unity" ? "Redirecting..." : "Base Game"}
+          </button>
+          <button 
+            onClick={() => onGameSelect("unity2")}
+            disabled={isLoading}
+            className="w-full px-4 py-2 text-white bg-blue-500 rounded hover:bg-blue-600 disabled:bg-blue-300"
+          >
+            {isLoading && selectedGame === "unity2" ? "Redirecting..." : "Continue to Unity Game 2"}
+          </button>
     </main>
     </>
   );
