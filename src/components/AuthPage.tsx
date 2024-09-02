@@ -36,11 +36,16 @@ const GameSelectionUI: React.FC<GameSelectionUIProps> = ({ isLoading, selectedGa
                     <div className="h-[204px] w-[168px] rounded-[14px] bg-transparent shrink-0 bg-center " style={{backgroundImage: `url('/gameimg/GameImages.png')`}}></div>
             </div>
         </div>  
-        <div className='flex flex-col'>
+        <div className='flex flex-col gap-5'>
             <div className='flex flex-col gap-2'>
-                <div className='text-white dark:text-white font-title text-2xl'>YOUR RECENT PLAY</div>
-                <div className='font-title text-white dark:text-white text-sm'>that you played last time</div>
+                <div className='text-white dark:text-white font-title text-2xl'>MORE GAMES</div>
+                <div className='font-title text-white dark:text-white text-sm'>that you can enjoy more</div>
             </div>
+                <div className='relative group h-[232px] w-[377px] rounded-[14px]  '>
+                    <div className='h-full w-full  bg-transparent transition-opacity duration-300 bg-center bg-cover' style={{backgroundImage: `url('/gameimg/Wallpaper_Shattered_Wind.png')`}}></div>
+                    <div className='absolute flex items-center justify-center inset-0 font-title opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-bold text-2xl'>COMING SOON...</div>
+                    <div className='absolute inset-0 bg-black group-hover:bg-opacity-30 transition-opacity duration-300 bg-opacity-0'></div>
+                </div>
         </div>
     </main>
     </>
