@@ -10,7 +10,7 @@ const GameSelectionUI: React.FC<GameSelectionUIProps> = ({ isLoading, selectedGa
   return (
     <>
     <Header/>
-    <main className='h-screen w-screen dark:bg-gradient-to-t p-5 from-[#0B4034] to-[#010601]  bg-gradient-to-t from-[#0B4034] to-[#010601]'>
+    <main className='h-screen flex flex-col gap-8 w-screen dark:bg-gradient-to-t p-5 from-[#0B4034] to-[#010601]  bg-gradient-to-t from-[#0B4034] to-[#010601]'>
         <div className='flex flex-col gap-5'>
             <div className='flex flex-col gap-2'>
             <div className='flex pt-28 justify-between  dark:text-white text-2xl text-white'>
@@ -36,7 +36,12 @@ const GameSelectionUI: React.FC<GameSelectionUIProps> = ({ isLoading, selectedGa
                     <div className="h-[204px] w-[168px] rounded-[14px] bg-transparent shrink-0 bg-center " style={{backgroundImage: `url('/gameimg/GameImages.png')`}}></div>
             </div>
         </div>  
-        
+        <div className='flex flex-col'>
+            <div className='flex flex-col gap-2'>
+                <div className='text-white dark:text-white font-title text-2xl'>YOUR RECENT PLAY</div>
+                <div className='font-title text-white dark:text-white text-sm'>that you played last time</div>
+            </div>
+        </div>
     </main>
     </>
   );
