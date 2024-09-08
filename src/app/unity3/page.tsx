@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import { Suspense } from "react";
- function Unity2Page() {
+ function Unity3Page() {
   const searchParams = useSearchParams();
 
   useEffect(() => {
@@ -28,7 +28,7 @@ import { Suspense } from "react";
 export default function UnityPage3() {
   return (
     <Suspense fallback={<div>Loading...</div>}>
-      <UnityPage3 />
+      <Unity3Page />
     </Suspense>
   );
 }
