@@ -1,4 +1,5 @@
-import React from 'react';
+"use client"
+import React, { useState } from 'react';
 import Header from './Header';
 interface GameSelectionUIProps {
   isLoading: boolean;
@@ -7,9 +8,10 @@ interface GameSelectionUIProps {
 }
 
 const GameSelectionUI: React.FC<GameSelectionUIProps> = ({ isLoading, selectedGame, onGameSelect }) => {
+  const [selectedChain, setSelectedChain] = useState('Ethereum');
   return (
     <>
-    <Header/>
+        <Header selectedChain={selectedChain} setSelectedChain={setSelectedChain} />
     <main className='h-full flex flex-col gap-8 w-screen dark:bg-gradient-to-t p-5 from-[#0B4034] to-[#010601]  bg-gradient-to-t from-[#0B4034] to-[#010601]'>
         <div className='flex flex-col gap-5'>
             <div className='flex flex-col gap-2'>
@@ -20,12 +22,17 @@ const GameSelectionUI: React.FC<GameSelectionUIProps> = ({ isLoading, selectedGa
             <div className='dark:text-white text-white text-sm font-title'>play the same game with your friends and find the fun</div>
             </div>
             <div className="flex overflow-x-auto w-full space-x-4 scroll-snap-x snap-mandatory">
+                
+                {/*  */}
                 <button 
                 onClick={() => onGameSelect("unity")}
                 disabled={isLoading}
                 >
                     <div className="h-[204px] w-[168px] rounded-[14px] bg-transparent shrink-0 bg-center " style={{backgroundImage: `url('/gameimg/BAse.png')`}}></div>
                 </button>
+
+                
+                {/*  */}
                 <button 
                 onClick={() => onGameSelect("unity2")}
                 disabled={isLoading}
@@ -33,14 +40,15 @@ const GameSelectionUI: React.FC<GameSelectionUIProps> = ({ isLoading, selectedGa
                 >
                     <div className="h-[204px] w-[168px] rounded-[14px] bg-transparent shrink-0 bg-center " style={{backgroundImage: `url('/gameimg/Binance.png')`}}></div>
                 </button>
-                
+
+                {/*  */}
                 <button 
                 onClick={() => onGameSelect("unity3")}
                 disabled={isLoading}
                 
                 >
                     <div className="h-[204px] w-[168px] rounded-[14px] bg-transparent shrink-0 bg-center " style={{backgroundImage: `url('/gameimg/GameImages.png')`}}></div>
-                </button>
+               </button>
             </div>
         </div>  
         <div className='flex flex-col gap-5'>
