@@ -33,7 +33,14 @@ const GameSelectionUI: React.FC<GameSelectionUIProps> = ({ isLoading, selectedGa
                 >
                     <div className="h-[204px] w-[168px] rounded-[14px] bg-transparent shrink-0 bg-center " style={{backgroundImage: `url('/gameimg/Binance.png')`}}></div>
                 </button>
+                
+                <button 
+                onClick={() => onGameSelect("unity3")}
+                disabled={isLoading}
+                
+                >
                     <div className="h-[204px] w-[168px] rounded-[14px] bg-transparent shrink-0 bg-center " style={{backgroundImage: `url('/gameimg/GameImages.png')`}}></div>
+                </button>
             </div>
         </div>  
         <div className='flex flex-col gap-5'>
