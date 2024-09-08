@@ -10,7 +10,6 @@ module.exports = {
     extend: {
       fontFamily:{
         title:["Staatliches", "sans-serif"]
-        
       }
     },
   },
