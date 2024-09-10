@@ -10,7 +10,7 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ selectedChain, setSelectedChain }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const chains = ['Ethereum', 'Binance Smart Chain', 'Polygon'];
+  const chains = ['Base', 'Binance Smart Chain', 'Taiko', 'zkCandy', 'TON'];
   
   return (
     <header className='h-24  p-5 w-full fixed '>

@@ -12,7 +12,7 @@ const GameSelectionUI: React.FC<GameSelectionUIProps> = ({ isLoading, selectedGa
   return (
     <>
         <Header selectedChain={selectedChain} setSelectedChain={setSelectedChain} />
-    <main className='h-full flex flex-col gap-8 w-screen dark:bg-gradient-to-t p-5 from-[#0B4034] to-[#010601]  bg-gradient-to-t from-[#0B4034] to-[#010601]'>
+    <main className='h-full overflow-y-auto flex flex-col gap-8 w-screen dark:bg-gradient-to-t p-5 from-[#0B4034] to-[#010601]  bg-gradient-to-t from-[#0B4034] to-[#010601]'>
         <div className='flex flex-col gap-5'>
             <div className='flex flex-col gap-2'>
             <div className='flex pt-24 justify-between  dark:text-white text-2xl text-white'>
@@ -21,34 +21,61 @@ const GameSelectionUI: React.FC<GameSelectionUIProps> = ({ isLoading, selectedGa
             </div>
             <div className='dark:text-white text-white text-sm font-title'>play the same game with your friends and find the fun</div>
             </div>
-            <div className="flex overflow-x-auto w-full space-x-4 scroll-snap-x snap-mandatory">
+            <div className="flex flex-col items-center w-full gap-10">
                 
                 {/*  */}
-                <button 
-                onClick={() => onGameSelect("unity")}
-                disabled={isLoading}
-                >
-                    <div className="h-[204px] w-[168px] rounded-[14px] bg-transparent shrink-0 bg-center " style={{backgroundImage: `url('/gameimg/BAse.png')`}}></div>
-                </button>
+                
+                    <div className="h-[57px] w-[345px] rounded-[14px] flex items-center justify-center gap-4 bg-transparent shrink-0 bg-center " >
+                      <div className='h-full w-full flex items-center gap-4'>
+                        <div className='h-full w-[57px] bg-center rounded-[14px] 'style={{backgroundImage: `url('/gameimg/BAse.png')`}}></div>
+                        <div className='text-white font-title font-bold'>Chain Night</div>
+                      </div>
+                      <div>
+                      <button 
+                      onClick={() => onGameSelect("unity")}
+                      disabled={isLoading}
+                      >
+                        <div className='text-black font-title p-1 pl-6 rounded-xl pr-6 bg-gradient-to-t from-white to-[#00FF62]'>Play</div>
+                      </button>
+                      </div>
+                    </div>
 
                 
                 {/*  */}
-                <button 
-                onClick={() => onGameSelect("unity2")}
-                disabled={isLoading}
                 
-                >
-                    <div className="h-[204px] w-[168px] rounded-[14px] bg-transparent shrink-0 bg-center " style={{backgroundImage: `url('/gameimg/Binance.png')`}}></div>
-                </button>
+                    <div className="h-[57px] w-[345px] rounded-[14px] flex items-center justify-center gap-4 bg-transparent shrink-0 bg-center " >
+                      <div className='h-full w-full flex items-center gap-4'>
+                        <div className='h-full w-[57px] bg-center rounded-[14px] 'style={{backgroundImage: `url('/gameimg/BAse.png')`}}></div>
+                        <div className='text-white  font-bold'>Binance Runner</div>
+                      </div>
+                      <div>
+                      <button 
+                      onClick={() => onGameSelect("unity2")}
+                      disabled={isLoading}
+                      
+                      >
+                        <div className='text-bloack font-title p-1 pl-6 rounded-xl pr-6 bg-gradient-to-t from-white to-[#00FF62]'>Play</div>
+                      </button>
+                      </div>
+                    </div>               
 
                 {/*  */}
-                <button 
-                onClick={() => onGameSelect("unity3")}
-                disabled={isLoading}
                 
-                >
-                    <div className="h-[204px] w-[168px] rounded-[14px] bg-transparent shrink-0 bg-center " style={{backgroundImage: `url('/gameimg/GameImages.png')`}}></div>
-               </button>
+                    <div className="h-[57px] w-[345px] rounded-[14px] flex items-center justify-center gap-4 bg-transparent shrink-0 bg-center " >
+                      <div className='h-full w-full flex items-center gap-4'>
+                        <div className='h-full w-[57px] bg-center rounded-[14px] 'style={{backgroundImage: `url('/gameimg/BAse.png')`}}></div>
+                        <div className='text-white font-bold'>Jump Com</div>
+                      </div>
+                      <div>
+                      <button 
+                      onClick={() => onGameSelect("unity3")}
+                      disabled={isLoading}
+                      
+                      > 
+                        <div className='text-bloack font-title p-1 pl-6 rounded-xl pr-6 bg-gradient-to-t from-white to-[#00FF62]'>Play</div>
+                        </button>
+                      </div>
+                    </div>              
             </div>
         </div>  
         <div className='flex flex-col gap-5'>
