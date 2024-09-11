@@ -39,7 +39,7 @@ const Header: React.FC<HeaderProps> = ({ selectedChain, setSelectedChain }) => {
             <ChevronDown className="ml-2 h-5 w-5" />
           </button>
           {isOpen && (
-            <div className="absolute right-0 mt-2 w-44 rounded-md shadow-lg backdrop-blur-sm bg-white/30 ring-1 ring-black ring-opacity-5">
+            <div className="absolute right-0 mt-2 w-44 rounded-md shadow-lg backdrop-blur-2xl bg-white/30 ring-1 ring-black ring-opacity-5">
               <div className="py-1" role="menu" aria-orientation="vertical">
                 {chains.map((chain) => (
                   <a
