@@ -21,7 +21,7 @@ const GameSelectionUI: React.FC<GameSelectionUIProps> = ({ isLoading, selectedGa
             </div>
             <div className='dark:text-white text-white text-sm font-title'>play the same game with your friends and find the fun</div>
             </div>
-            <div className="flex flex-col items-center w-full gap-10">
+            <div className="flex flex-col items-center w-full gap-5">
                 
                 {/*  */}
                 
