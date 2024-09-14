@@ -8,10 +8,10 @@ interface GameSelectionUIProps {
 }
 
 const GameSelectionUI: React.FC<GameSelectionUIProps> = ({ isLoading, selectedGame, onGameSelect }) => {
-  const [selectedChain, setSelectedChain] = useState('Ethereum');
+  const [selectedChain, setSelectedChain] = useState('Binance Smart Chain');
   return (
     <>
-        <Header selectedChain={selectedChain} setSelectedChain={setSelectedChain} />
+       
     <main className='h-full overflow-y-auto flex flex-col gap-8 w-screen dark:bg-gradient-to-t p-5 from-[#0B4034] to-[#010601]  bg-gradient-to-t from-[#0B4034] to-[#010601]'>
         <div className='flex flex-col gap-5'>
             <div className='flex flex-col gap-2 z-0'>
@@ -28,7 +28,7 @@ const GameSelectionUI: React.FC<GameSelectionUIProps> = ({ isLoading, selectedGa
                     <div className="h-[57px] w-[345px] rounded-[14px] flex items-center justify-center gap-4 bg-transparent shrink-0 bg-center " >
                       <div className='h-full w-full flex items-center gap-4'>
                         <div className='h-full w-[57px] bg-center rounded-[14px] 'style={{backgroundImage: `url('/gameimg/ChainKnight.png')`}}></div>
-                        <div className='text-white  font-bold'>Chain Night</div>
+                        <div className='text-white  font-bold'>Trail Blazer on base</div>
                       </div>
                       <div>
                       <button 
@@ -76,7 +76,7 @@ const GameSelectionUI: React.FC<GameSelectionUIProps> = ({ isLoading, selectedGa
                         </button>
                       </div>
                     </div>     
-                    <div className="h-[57px] w-[345px] rounded-[14px] flex items-center justify-center gap-4 bg-transparent shrink-0 bg-center " >
+                    {/* <div className="h-[57px] w-[345px] rounded-[14px] flex items-center justify-center gap-4 bg-transparent shrink-0 bg-center " >
                       <div className='h-full w-full flex items-center gap-4'>
                         <div className='h-full w-[57px] bg-center rounded-[14px] 'style={{backgroundImage: `url('/gameimg/CosmicLeap.png')`}}></div>
                         <div className='text-white  font-bold'>Trail Blazer</div>
@@ -90,7 +90,7 @@ const GameSelectionUI: React.FC<GameSelectionUIProps> = ({ isLoading, selectedGa
                         <div className='text-bloack font-title p-1 pl-6 rounded-xl pr-6 bg-gradient-to-t from-white to-[#00FF62]'>Play</div>
                       </button>
                       </div>
-                    </div>     
+                    </div>      */}
                     <div className="h-[57px] w-[345px] rounded-[14px] flex items-center justify-center gap-4 bg-transparent shrink-0 bg-center " >
                       <div className='h-full w-full flex items-center gap-4'>
                         <div className='h-full w-[57px] bg-center rounded-[14px] 'style={{backgroundImage: `url('/gameimg/CosmicLeap.png')`}}></div>

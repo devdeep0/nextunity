@@ -1,20 +1,24 @@
+"use client"
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Script from "next/script";
 import './global.css'
+import { useState } from "react";
+import Header from "@/components/Header";
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
-  title: "thirdweb SDK + Next starter",
-  description:
-    "Starter template for using thirdweb SDK with Next.js App router",
-};
+// export const metadata: Metadata = {
+//   title: "thirdweb SDK + Next starter",
+//   description:
+//     "Starter template for using thirdweb SDK with Next.js App router",
+// };
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const [selectedChain, setSelectedChain] = useState('Base')
   return (
     <html lang="en" style={{ overflow: "hidden", height: "100%" }}>
       <head>
@@ -26,7 +30,10 @@ export default function RootLayout({
       <body
         className={inter.className}
         style={{ overflow: "hidden", height: "100%", margin: 0 }}
-      >
+      ><Header 
+      selectedChain={selectedChain} 
+      setSelectedChain={setSelectedChain} 
+    />
         {children}
       </body>
     </html>

@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
-
+import Link from 'next/link';
 interface HeaderProps {
   selectedChain: string;
   setSelectedChain: (chain: string) => void;
@@ -42,17 +42,17 @@ const Header: React.FC<HeaderProps> = ({ selectedChain, setSelectedChain }) => {
             <div className="z-10 absolute right-0 mt-2 w-44 rounded-xl shadow-lg backdrop-blur-xl bg-white/20 ring-1 ring-black ring-opacity-5">
               <div className="py-1" role="menu" aria-orientation="vertical">
                 {chains.map((chain) => (
-                  <a
-                    key={chain}
-                    href="#"
-                    className="block px-4 py-2 text-sm text-white hover:bg-gray-100 hover:text-gray-900"
-                    onClick={() => {
-                      setSelectedChain(chain);
-                      setIsOpen(false);
-                    }}
-                  >
-                    {chain}
-                  </a>
+                   <Link
+                   key={chain}
+                   href={`/${chain.toLowerCase().replace(/ /g, '-')}`}
+                   className="block px-4 py-2 text-sm text-white hover:bg-gray-100 hover:text-gray-900"
+                   onClick={() => {
+                     setSelectedChain(chain);
+                     setIsOpen(false);
+                   }}
+                 >
+                   {chain}
+                 </Link>
                 ))}
               </div>
             </div>
