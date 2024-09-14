@@ -8,7 +8,7 @@ interface GameSelectionUIProps {
   onGameSelect: (game: string) => void;
 }
 
-const GameSelectionUI: React.FC<GameSelectionUIProps> = ({ isLoading, selectedGame, onGameSelect }) => {
+const Binance: React.FC<GameSelectionUIProps> = ({ isLoading, selectedGame, onGameSelect }) => {
   const [selectedChain, setSelectedChain] = useState('Binance Smart Chain');
   return (
     <>
@@ -153,3 +153,4 @@ const GameSelectionUI: React.FC<GameSelectionUIProps> = ({ isLoading, selectedGa
         </div>
       </div>
     </div> */}
+    export default Binance
