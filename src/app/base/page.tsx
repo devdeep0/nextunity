@@ -61,4 +61,3 @@ const Base:React.FC<GameSelectionUIProps> = ({ isLoading, selectedGame, onGameSe
   )
 }
 
-export default Base

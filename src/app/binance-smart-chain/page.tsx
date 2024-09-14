@@ -125,7 +125,7 @@ const GameSelectionUI: React.FC<GameSelectionUIProps> = ({ isLoading, selectedGa
   );
 };
 
-export default GameSelectionUI;
+
 
 
 
