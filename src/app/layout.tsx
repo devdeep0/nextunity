@@ -6,7 +6,7 @@ import './global.css'
 import { useState } from "react";
 import Header from "@/components/Header";
 const inter = Inter({ subsets: ["latin"] });
-
+import { usePathname } from 'next/navigation';
 // export const metadata: Metadata = {
 //   title: "thirdweb SDK + Next starter",
 //   description:
@@ -19,6 +19,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const [selectedChain, setSelectedChain] = useState('Chains')
+  const pathname = usePathname(); // Get current route
+
+  // Define the routes where you don't want the Header to be displayed
+  const noHeaderRoutes = ['/unity', '/untiy2', '/unity3', '/unity4', '/unity5',]; // Add the routes where you don't want the header
+
+  // Check if the current pathname matches any of the routes where the header should be excluded
+  const shouldHideHeader = noHeaderRoutes.includes(pathname);
+
   return (
     <html lang="en" style={{ overflow: "hidden", height: "100%" }}>
       <head>
