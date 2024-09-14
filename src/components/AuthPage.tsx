@@ -90,7 +90,22 @@ const GameSelectionUI: React.FC<GameSelectionUIProps> = ({ isLoading, selectedGa
                         <div className='text-bloack font-title p-1 pl-6 rounded-xl pr-6 bg-gradient-to-t from-white to-[#00FF62]'>Play</div>
                       </button>
                       </div>
-                    </div>           
+                    </div>     
+                    <div className="h-[57px] w-[345px] rounded-[14px] flex items-center justify-center gap-4 bg-transparent shrink-0 bg-center " >
+                      <div className='h-full w-full flex items-center gap-4'>
+                        <div className='h-full w-[57px] bg-center rounded-[14px] 'style={{backgroundImage: `url('/gameimg/CosmicLeap.png')`}}></div>
+                        <div className='text-white  font-bold'>Super Jumper</div>
+                      </div>
+                      <div>
+                      <button 
+                      onClick={() => onGameSelect("unity5")}
+                      disabled={isLoading}
+                      
+                      >
+                        <div className='text-bloack font-title p-1 pl-6 rounded-xl pr-6 bg-gradient-to-t from-white to-[#00FF62]'>Play</div>
+                      </button>
+                      </div>
+                    </div>        
             </div>
         </div>  
         <div className='flex flex-col gap-5'>
