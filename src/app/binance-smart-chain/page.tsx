@@ -1,6 +1,7 @@
 "use client"
 import React, { useState } from 'react'
 import Header from '@/components/Header';
+import { ChevronRight } from 'lucide-react';
 interface GameSelectionUIProps {
   isLoading: boolean;
   selectedGame: string;
@@ -17,7 +18,7 @@ const GameSelectionUI: React.FC<GameSelectionUIProps> = ({ isLoading, selectedGa
             <div className='flex flex-col gap-2 z-0'>
             <div className='flex pt-24 justify-between  dark:text-white text-2xl text-white'>
                 <div className='font-title'>New game</div>
-                <div className='font-title'>-&gt;</div>
+                <ChevronRight className="ml-2 h-5 w-5" />
             </div>
             <div className='dark:text-white text-white text-sm font-title'>play the same game with your friends and find the fun</div>
             </div>
@@ -45,7 +46,7 @@ const GameSelectionUI: React.FC<GameSelectionUIProps> = ({ isLoading, selectedGa
                 
                     <div className="h-[57px] w-[345px] rounded-[14px] flex items-center justify-center gap-4 bg-transparent shrink-0 bg-center " >
                       <div className='h-full w-full flex items-center gap-4'>
-                        <div className='h-full w-[57px] bg-center rounded-[14px] 'style={{backgroundImage: `url('/gameimg/CosmicLeap.png')`}}></div>
+                        <div className='h-full w-[57px] bg-center rounded-[14px] 'style={{backgroundImage: `url('/gameimg/unsplash_rTCDPl3C_os.png')`}}></div>
                         <div className='text-white  font-bold'>Trail Blazer</div>
                       </div>
                       <div>
@@ -63,7 +64,7 @@ const GameSelectionUI: React.FC<GameSelectionUIProps> = ({ isLoading, selectedGa
                 
                     <div className="h-[57px] w-[345px] rounded-[14px] flex items-center justify-center gap-4 bg-transparent shrink-0 bg-center " >
                       <div className='h-full w-full flex items-center gap-4'>
-                        <div className='h-full w-[57px] bg-center rounded-[14px] 'style={{backgroundImage: `url('/gameimg/BNBchainfinal.png')`}}></div>
+                        <div className='h-full w-[57px] bg-center rounded-[14px] 'style={{backgroundImage: `url('/gameimg/Frame 700.png')`}}></div>
                         <div className='text-white font-bold'>City Jump</div>
                       </div>
                       <div>
@@ -93,8 +94,8 @@ const GameSelectionUI: React.FC<GameSelectionUIProps> = ({ isLoading, selectedGa
                     </div>      */}
                     <div className="h-[57px] w-[345px] rounded-[14px] flex items-center justify-center gap-4 bg-transparent shrink-0 bg-center " >
                       <div className='h-full w-full flex items-center gap-4'>
-                        <div className='h-full w-[57px] bg-center rounded-[14px] 'style={{backgroundImage: `url('/gameimg/CosmicLeap.png')`}}></div>
-                        <div className='text-white  font-bold'>Super Jumper</div>
+                        <div className='h-full w-[57px] bg-center rounded-[14px] 'style={{backgroundImage: `url('/gameimg/Frame 699.png')`}}></div>
+                        <div className='text-white  font-bold'>Escape The Pit</div>
                       </div>
                       <div>
                       <button 

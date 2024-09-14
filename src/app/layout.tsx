@@ -18,7 +18,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const [selectedChain, setSelectedChain] = useState('Base')
+  const [selectedChain, setSelectedChain] = useState('Chains')
   return (
     <html lang="en" style={{ overflow: "hidden", height: "100%" }}>
       <head>
