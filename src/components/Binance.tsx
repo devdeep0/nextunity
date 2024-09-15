@@ -12,7 +12,10 @@ const Binance: React.FC<GameSelectionUIProps> = ({ isLoading, selectedGame, onGa
   const [selectedChain, setSelectedChain] = useState('Binance Smart Chain');
   return (
     <>
-       
+       <Header 
+      selectedChain={selectedChain} 
+      setSelectedChain={setSelectedChain} 
+    />
     <main className='h-full overflow-y-auto flex flex-col gap-8 w-screen dark:bg-gradient-to-t p-5 from-[#0B4034] to-[#010601]  bg-gradient-to-t from-[#0B4034] to-[#010601]'>
         <div className='flex flex-col gap-5'>
             <div className='flex flex-col gap-2 z-0'>
