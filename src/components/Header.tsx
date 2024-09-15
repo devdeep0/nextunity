@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
-import Link from 'next/link';
+
 interface HeaderProps {
   selectedChain: string;
   setSelectedChain: (chain: string) => void;
@@ -10,14 +10,7 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ selectedChain, setSelectedChain }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const allChains = ['Base', 'Binance Smart Chain', 'Taiko', 'zkCandy', 'TON', 'Chains'];
-  const displayedChains = allChains.filter(chain => chain !== 'Chains');
-
-  const handleChainSelect = (chain: string): void => {
-    setSelectedChain(chain);
-    setIsOpen(false);
-    
-  };
+  const chains = ['Base', 'Binance Smart Chain', 'Taiko', 'zkCandy', 'TON'];
   
   return (
     <header className='h-24 z-20 p-5 w-full fixed backdrop-blur-xl '>
@@ -46,17 +39,20 @@ const Header: React.FC<HeaderProps> = ({ selectedChain, setSelectedChain }) => {
             <ChevronDown className="ml-2 h-5 w-5" />
           </button>
           {isOpen && (
-            <div className="z-10 absolute right-0 mt-2 w-44 rounded-xl shadow-lg backdrop-blur-xl  bg-gradient-to-t from-[#0B4034] to-[#010601] ring-1 ring-black ring-opacity-5">
+            <div className="z-10 absolute right-0 mt-2 w-44 rounded-xl shadow-lg backdrop-blur-xl bg-white/20 ring-1 ring-black ring-opacity-5">
               <div className="py-1" role="menu" aria-orientation="vertical">
-              {displayedChains.map((chain) => (
-                   <Link
-                   key={chain}
-                   href={chain === 'Chains' ? '/login/telegram' : `/${chain.toLowerCase().replace(/ /g, '-')}`}
-                   className="block px-4 py-2 text-sm text-white hover:bg-gray-100 hover:text-gray-900"
-                   onClick={() => handleChainSelect(chain)}
-                 >
-                   {chain}
-                 </Link>
+                {chains.map((chain) => (
+                  <a
+                    key={chain}
+                    href="#"
+                    className="block px-4 py-2 text-sm text-white hover:bg-gray-100 hover:text-gray-900"
+                    onClick={() => {
+                      setSelectedChain(chain);
+                      setIsOpen(false);
+                    }}
+                  >
+                    {chain}
+                  </a>
                 ))}
               </div>
             </div>
