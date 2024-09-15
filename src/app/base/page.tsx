@@ -4,7 +4,7 @@ import { useState, useCallback } from "react";
 import { useRouter } from "next/navigation";
 import Base from "@/components/Base";
 
-export default function TelegramLogin({
+export default function BaseLogin({
   searchParams,
 }: {
   searchParams: { signature: string; message: string };

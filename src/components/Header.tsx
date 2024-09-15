@@ -16,9 +16,7 @@ const Header: React.FC<HeaderProps> = ({ selectedChain, setSelectedChain }) => {
   const handleChainSelect = (chain: string): void => {
     setSelectedChain(chain);
     setIsOpen(false);
-    if (chain === 'Chains') {
-      window.location.href = '/login/telegram';
-    }
+    
   };
   
   return (

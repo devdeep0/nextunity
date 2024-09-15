@@ -4,7 +4,7 @@ import { useState, useCallback } from "react";
 import { useRouter } from "next/navigation";
 import Base from "@/components/Base";
 import Binance from "@/components/Binance";
-export default function TelegramLogin({
+export default function BinanceLogin({
   searchParams,
 }: {
   searchParams: { signature: string; message: string };
