@@ -38,11 +38,11 @@ const GameSelectionUI : React.FC<GameSelectionUIProps> = ({ isLoading, selectedG
   <div className="snap-center snap-always flex-shrink-0">
     <button
       onClick={() => setActiveButton('binance')}
-      className={`p-1 pl-3 pr-3 rounded-md text-black border-2 font-bold whitespace-nowrap ${
-        activeButton === 'binance' ? 'bg-gradient-to-t from-white to-[#00FF62] text-black' : 'text-white bg-transparent'
+      className={`p-1 pl-5 pr-5 rounded-xl  bg-gradient-to-t from-white to-[#00FF62]  font-bold whitespace-nowrap ${
+        activeButton === 'binance' ? 'bg-gradient-to-t from-white to-[#00FF62] text-black' : 'opacity-50 bg-transparent'
       }`}
     >
-      Binance Smart Chain
+      BSC
     </button>
   </div>
 
@@ -50,8 +50,8 @@ const GameSelectionUI : React.FC<GameSelectionUIProps> = ({ isLoading, selectedG
   <div className="snap-center snap-always flex-shrink-0">
     <button
       onClick={() => setActiveButton('base')}
-      className={`p-1 pl-3 pr-3 rounded-md border-2 font-bold whitespace-nowrap ${
-        activeButton === 'base' ? 'bg-gradient-to-t from-white to-[#00FF62] text-black' : 'text-white bg-transparent'
+      className={`p-1 pl-5 pr-5 rounded-xl  bg-gradient-to-t from-white to-[#00FF62] font-bold whitespace-nowrap ${
+        activeButton === 'base' ? 'bg-gradient-to-t from-white to-[#00FF62] text-black' : 'opacity-50 bg-transparent'
       }`}
     >
       Base
@@ -62,8 +62,8 @@ const GameSelectionUI : React.FC<GameSelectionUIProps> = ({ isLoading, selectedG
          <div className="snap-center snap-always flex-shrink-0">
     <button
       onClick={() => setActiveButton('Taiko')}
-      className={`p-1 pl-3 pr-3 rounded-md border-2 font-bold whitespace-nowrap ${
-        activeButton === 'Taiko' ? 'bg-gradient-to-t from-white to-[#00FF62] text-black' : 'text-white bg-transparent'
+      className={`p-1 pl-5 pr-5 rounded-xl  bg-gradient-to-t from-white to-[#00FF62] font-bold whitespace-nowrap ${
+        activeButton === 'Taiko' ? 'bg-gradient-to-t from-white to-[#00FF62] text-black' : 'opacity-50 bg-transparent'
       }`}
     >
       Taiko
@@ -74,8 +74,8 @@ const GameSelectionUI : React.FC<GameSelectionUIProps> = ({ isLoading, selectedG
          <div className="snap-center snap-always flex-shrink-0">
     <button
       onClick={() => setActiveButton('TON')}
-      className={`p-1 pl-3 pr-3 rounded-md border-2 font-bold whitespace-nowrap ${
-        activeButton === 'TON' ? 'bg-gradient-to-t from-white to-[#00FF62] text-black' : 'text-white bg-transparent'
+      className={`p-1 pl-5 pr-5 rounded-xl  bg-gradient-to-t from-white to-[#00FF62] font-bold whitespace-nowrap ${
+        activeButton === 'TON' ? 'bg-gradient-to-t from-white to-[#00FF62] text-black' : 'opacity-50 bg-transparent'
       }`}
     >
       TON
