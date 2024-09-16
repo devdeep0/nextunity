@@ -2,13 +2,20 @@
 import React, { useState } from 'react';
 import Header from './Header';
 import Slideshow from './Slideshow';
+import Image from 'next/image';
+import Link from 'next/link';
+interface GameSelectionUIProps {
+  isLoading: boolean;
+  selectedGame: string;
+  onGameSelect: (game: string) => void;
+}
+const GameSelectionUI : React.FC<GameSelectionUIProps> = ({ isLoading, selectedGame, onGameSelect }) => {
 
-
-function GameSelectionUI() {
-  const [selectedChain, setSelectedChain] = useState('Binance Smart Chain');
+  const [activeButton, setActiveButton] = useState('Binance Smart Chain');
   return (
     <>
-       
+        <Header 
+    />
     <main className='h-full overflow-y-auto pt-12 flex flex-col gap-2 w-screen dark:bg-gradient-to-t p-5 from-[#0B4034] to-[#010601]  bg-gradient-to-t from-[#0B4034] to-[#010601]'>
     <div className='flex flex-col gap-2 z-0'>
             <div className='flex pt-24 justify-between  dark:text-white text-xl text-white'>
@@ -18,6 +25,185 @@ function GameSelectionUI() {
             <div className='dark:text-white text-white text-sm font-title'>Select your preferred chain and stat playing !</div>
             </div>
        <Slideshow/>
+       <div className=' text-xl font-semibold mt-4 ' >
+          <div className='flex flex-row gap-2 dark:text-white text-white sm:items-center sm:justify-center'>
+           <div>Select Chain to Play </div> </div>
+             </div>
+
+
+             
+             <div className='w-full flex gap-4 mt-3 overflow-x-auto scroll-smooth snap-x snap-mandatory no-scrollbar font-title'>
+  
+  
+  <div className="snap-center snap-always flex-shrink-0">
+    <button
+      onClick={() => setActiveButton('binance')}
+      className={`p-1 pl-3 pr-3 rounded-md text-black border-2 font-bold whitespace-nowrap ${
+        activeButton === 'binance' ? 'bg-gradient-to-t from-white to-[#00FF62] text-black' : 'text-white bg-transparent'
+      }`}
+    >
+      Binance Smart Chain
+    </button>
+  </div>
+
+
+  <div className="snap-center snap-always flex-shrink-0">
+    <button
+      onClick={() => setActiveButton('base')}
+      className={`p-1 pl-3 pr-3 rounded-md border-2 font-bold whitespace-nowrap ${
+        activeButton === 'base' ? 'bg-gradient-to-t from-white to-[#00FF62] text-black' : 'text-white bg-transparent'
+      }`}
+    >
+      Base
+    </button>
+         </div>
+
+
+         <div className="snap-center snap-always flex-shrink-0">
+    <button
+      onClick={() => setActiveButton('Taiko')}
+      className={`p-1 pl-3 pr-3 rounded-md border-2 font-bold whitespace-nowrap ${
+        activeButton === 'Taiko' ? 'bg-gradient-to-t from-white to-[#00FF62] text-black' : 'text-white bg-transparent'
+      }`}
+    >
+      Taiko
+    </button>
+         </div>
+
+
+         <div className="snap-center snap-always flex-shrink-0">
+    <button
+      onClick={() => setActiveButton('TON')}
+      className={`p-1 pl-3 pr-3 rounded-md border-2 font-bold whitespace-nowrap ${
+        activeButton === 'TON' ? 'bg-gradient-to-t from-white to-[#00FF62] text-black' : 'text-white bg-transparent'
+      }`}
+    >
+      TON
+    </button>
+         </div>
+         </div>
+
+{/* logic */}
+{/* binance */}
+         {activeButton === 'binance' && (
+                <div className="flex flex-col items-center w-full gap-5">
+                
+                {/*  */}
+                
+                    {/* <div className="h-[57px] w-[345px] rounded-[14px] flex items-center justify-center gap-4 bg-transparent shrink-0 bg-center " >
+                      <div className='h-full w-full flex items-center gap-4'>
+                        <div className='h-full w-[57px] bg-center rounded-[14px] 'style={{backgroundImage: `url('/gameimg/ChainKnight.png')`}}></div>
+                        <div className='text-white  font-bold'>Trail Blazer on base</div>
+                      </div>
+                      <div>
+                      <button 
+                      onClick={() => onGameSelect("unity")}
+                      disabled={isLoading}
+                      >
+                        <div className='text-black font-title p-1 pl-6 rounded-xl pr-6 bg-gradient-to-t from-white to-[#00FF62]'>Play</div>
+                      </button>
+                      </div>
+                    </div> */}
+
+                
+                {/*  */}
+                
+                    <div className="h-[57px] w-[345px] rounded-[14px] flex items-center justify-center gap-4 bg-transparent shrink-0 bg-center " >
+                      <div className='h-full w-full flex items-center gap-4'>
+                        <div className='h-full w-[57px] bg-center rounded-[14px] 'style={{backgroundImage: `url('/gameimg/unsplash_rTCDPl3C_os.png')`}}></div>
+                        <div className='text-white  font-bold'>Trail Blazer</div>
+                      </div>
+                      <div>
+                      <button 
+                      onClick={() => onGameSelect("unity2")}
+                      disabled={isLoading}
+                      
+                      >
+                        <div className='text-bloack font-title p-1 pl-6 rounded-xl pr-6 bg-gradient-to-t from-white to-[#00FF62]'>Play</div>
+                      </button>
+                      </div>
+                    </div>               
+
+                {/*  */}
+                
+                    <div className="h-[57px] w-[345px] rounded-[14px] flex items-center justify-center gap-4 bg-transparent shrink-0 bg-center " >
+                      <div className='h-full w-full flex items-center gap-4'>
+                        <div className='h-full w-[57px] bg-center rounded-[14px] 'style={{backgroundImage: `url('/gameimg/Frame 700.png')`}}></div>
+                        <div className='text-white font-bold'>City Jump</div>
+                      </div>
+                      <div>
+                      <button 
+                      onClick={() => onGameSelect("unity3")}
+                      disabled={isLoading}
+                      
+                      > 
+                        <div className='text-bloack font-title p-1 pl-6 rounded-xl pr-6 bg-gradient-to-t from-white to-[#00FF62]'>Play</div>
+                        </button>
+                      </div>
+                    </div>     
+                    {/* <div className="h-[57px] w-[345px] rounded-[14px] flex items-center justify-center gap-4 bg-transparent shrink-0 bg-center " >
+                      <div className='h-full w-full flex items-center gap-4'>
+                        <div className='h-full w-[57px] bg-center rounded-[14px] 'style={{backgroundImage: `url('/gameimg/CosmicLeap.png')`}}></div>
+                        <div className='text-white  font-bold'>Trail Blazer</div>
+                      </div>
+                      <div>
+                      <button 
+                      onClick={() => onGameSelect("unity4")}
+                      disabled={isLoading}
+                      
+                      >
+                        <div className='text-bloack font-title p-1 pl-6 rounded-xl pr-6 bg-gradient-to-t from-white to-[#00FF62]'>Play</div>
+                      </button>
+                      </div>
+                    </div>      */}
+                    <div className="h-[57px] w-[345px] rounded-[14px] flex items-center justify-center gap-4 bg-transparent shrink-0 bg-center " >
+                      <div className='h-full w-full flex items-center gap-4'>
+                        <div className='h-full w-[57px] bg-center rounded-[14px] 'style={{backgroundImage: `url('/gameimg/Frame 699.png')`}}></div>
+                        <div className='text-white  font-bold'>Escape The Pit</div>
+                      </div>
+                      <div>
+                      <button 
+                      onClick={() => onGameSelect("unity5")}
+                      disabled={isLoading}
+                      
+                      >
+                        <div className='text-bloack font-title p-1 pl-6 rounded-xl pr-6 bg-gradient-to-t from-white to-[#00FF62]'>Play</div>
+                      </button>
+                      </div>
+                    </div>        
+            </div>
+            )}
+
+
+{/* Base */}
+
+            {activeButton === 'base' && (
+               <div className="flex flex-col items-center w-full gap-5">
+                
+               {/*  */}
+               
+                   <div className="h-[57px] w-[345px] rounded-[14px] flex items-center justify-center gap-4 bg-transparent shrink-0 bg-center " >
+                     <div className='h-full w-full flex items-center gap-4'>
+                       <div className='h-full w-[57px] bg-center rounded-[14px] 'style={{backgroundImage: `url('/gameimg/ChainKnight.png')`}}></div>
+                       <div className='text-white  font-bold'>Trail Blazer </div>
+                     </div>
+                     <div>
+                     <button 
+                     onClick={() => onGameSelect("unity")}
+                     disabled={isLoading}
+                     >
+                       <div className='text-black font-title p-1 pl-6 rounded-xl pr-6 bg-gradient-to-t from-white to-[#00FF62]'>Play</div>
+                     </button>
+                     </div>
+                   </div>
+
+               
+               {/*  */}
+               
+                 
+                        
+           </div>
+            )}
     </main>
     </>
   );
