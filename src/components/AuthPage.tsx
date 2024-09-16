@@ -16,8 +16,8 @@ const GameSelectionUI : React.FC<GameSelectionUIProps> = ({ isLoading, selectedG
     <>
         <Header 
     />
-    <main className='h-full overflow-y-auto pt-12 flex flex-col gap-2 w-screen dark:bg-gradient-to-t p-5 from-[#0B4034] to-[#010601]  bg-gradient-to-t from-[#0B4034] to-[#010601]'>
-    <div className='flex flex-col gap-2 z-0'>
+<main className='h-screen overflow-y-auto flex flex-col w-screen dark:bg-gradient-to-t from-[#0B4034] to-[#010601] bg-gradient-to-t from-[#0B4034] to-[#010601]'>  <div className='flex-1 overflow-y-auto'>
+    <div className='pt-4 flex flex-col gap-2 p-5'>    <div className='flex flex-col gap-2 z-0'>
             <div className='flex pt-24 justify-between  dark:text-white text-xl text-white'>
                 <div className='font-title'>Welcome to Rupture Labs Telegram bot 🤖</div>
                 
@@ -32,7 +32,7 @@ const GameSelectionUI : React.FC<GameSelectionUIProps> = ({ isLoading, selectedG
 
 
              
-             <div className='w-full flex gap-4 mt-3 overflow-x-auto scroll-smooth snap-x snap-mandatory no-scrollbar font-title'>
+             <div className='w-full flex gap-4 mt-3 overflow-x-auto over scroll-smooth snap-x snap-mandatory no-scrollbar font-title'>
   
   
   <div className="snap-center snap-always flex-shrink-0">
@@ -85,6 +85,7 @@ const GameSelectionUI : React.FC<GameSelectionUIProps> = ({ isLoading, selectedG
 
 {/* logic */}
 {/* binance */}
+      <div className='pt-4'>
          {activeButton === 'binance' && (
                 <div className="flex flex-col items-center w-full gap-5">
                 
@@ -204,6 +205,9 @@ const GameSelectionUI : React.FC<GameSelectionUIProps> = ({ isLoading, selectedG
                         
            </div>
             )}
+            </div>
+            </div>
+            </div>
     </main>
     </>
   );
