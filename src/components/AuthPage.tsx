@@ -16,29 +16,24 @@ const GameSelectionUI : React.FC<GameSelectionUIProps> = ({ isLoading, selectedG
     <>
         <Header 
     />
-<main className='h-screen overflow-y-auto flex flex-col w-screen dark:bg-gradient-to-t from-[#0B4034] to-[#010601] bg-gradient-to-t from-[#0B4034] to-[#010601]'>  <div className='flex-1 overflow-y-auto'>
-    <div className='pt-4 flex flex-col gap-2 p-5'>    <div className='flex flex-col gap-2 z-0'>
-            <div className='flex pt-24 justify-between  dark:text-white text-xl text-white'>
-                <div className='font-title'>Welcome to Rupture Labs Telegram bot 🤖</div>
-                
-            </div>
-            <div className='dark:text-white text-white text-sm font-title'>Select your preferred chain and stat playing !</div>
-            </div>
-       <Slideshow/>
+<main className='h-screen overflow-y-auto pt-24  flex flex-col w-screen dark:bg-gradient-to-t from-[#0B4034] to-[#010601] bg-gradient-to-t from-[#0B4034] to-[#010601]'>  
+  <div className='flex-1 overflow-y-auto'>
+    <div className='pt-4 flex flex-col gap-2 p-5'>   
+       
        <div className=' text-xl font-semibold mt-4 ' >
           <div className='flex flex-row gap-2 dark:text-white text-white sm:items-center sm:justify-center'>
-           <div>Select Chain to Play </div> </div>
+           <div className='font-title'>Select Chain  </div> </div>
              </div>
 
 
              
-             <div className='w-full flex gap-4 mt-3 overflow-x-auto over scroll-smooth snap-x snap-mandatory no-scrollbar font-title'>
+             <div className='w-full flex gap-4 mt-3 overflow-x-auto over scroll-smooth snap-x snap-mandatory no-scrollbar '>
   
   
   <div className="snap-center snap-always flex-shrink-0">
     <button
       onClick={() => setActiveButton('binance')}
-      className={`p-1 pl-5 pr-5 rounded-xl  bg-gradient-to-t from-white to-[#00FF62]  font-bold whitespace-nowrap ${
+      className={`p-1 pl-6 pr-6 rounded-xl  bg-gradient-to-t from-white to-[#00FF62]  font-bold whitespace-nowrap ${
         activeButton === 'binance' ? 'bg-gradient-to-t from-white to-[#00FF62] text-black' : 'opacity-50 bg-transparent'
       }`}
     >
@@ -50,7 +45,7 @@ const GameSelectionUI : React.FC<GameSelectionUIProps> = ({ isLoading, selectedG
   <div className="snap-center snap-always flex-shrink-0">
     <button
       onClick={() => setActiveButton('base')}
-      className={`p-1 pl-5 pr-5 rounded-xl  bg-gradient-to-t from-white to-[#00FF62] font-bold whitespace-nowrap ${
+      className={`p-1 pl-6 pr-6 rounded-xl  bg-gradient-to-t from-white to-[#00FF62] font-bold whitespace-nowrap ${
         activeButton === 'base' ? 'bg-gradient-to-t from-white to-[#00FF62] text-black' : 'opacity-50 bg-transparent'
       }`}
     >
@@ -62,7 +57,7 @@ const GameSelectionUI : React.FC<GameSelectionUIProps> = ({ isLoading, selectedG
          <div className="snap-center snap-always flex-shrink-0">
     <button
       onClick={() => setActiveButton('Taiko')}
-      className={`p-1 pl-5 pr-5 rounded-xl  bg-gradient-to-t from-white to-[#00FF62] font-bold whitespace-nowrap ${
+      className={`p-1 pl-6 pr-6 rounded-xl  bg-gradient-to-t from-white to-[#00FF62] font-bold whitespace-nowrap ${
         activeButton === 'Taiko' ? 'bg-gradient-to-t from-white to-[#00FF62] text-black' : 'opacity-50 bg-transparent'
       }`}
     >
@@ -74,7 +69,7 @@ const GameSelectionUI : React.FC<GameSelectionUIProps> = ({ isLoading, selectedG
          <div className="snap-center snap-always flex-shrink-0">
     <button
       onClick={() => setActiveButton('TON')}
-      className={`p-1 pl-5 pr-5 rounded-xl  bg-gradient-to-t from-white to-[#00FF62] font-bold whitespace-nowrap ${
+      className={`p-1 pl-6 pr-6 rounded-xl  bg-gradient-to-t from-white to-[#00FF62] font-bold whitespace-nowrap ${
         activeButton === 'TON' ? 'bg-gradient-to-t from-white to-[#00FF62] text-black' : 'opacity-50 bg-transparent'
       }`}
     >
@@ -120,7 +115,7 @@ const GameSelectionUI : React.FC<GameSelectionUIProps> = ({ isLoading, selectedG
                       disabled={isLoading}
                       
                       >
-                        <div className='text-bloack font-title p-1 pl-6 rounded-xl pr-6 bg-gradient-to-t from-white to-[#00FF62]'>Play</div>
+                        <div className='text-black font-bold p-1 pl-6 rounded-xl pr-6 bg-gradient-to-t from-white to-[#00FF62]'>Play</div>
                       </button>
                       </div>
                     </div>               
@@ -138,7 +133,7 @@ const GameSelectionUI : React.FC<GameSelectionUIProps> = ({ isLoading, selectedG
                       disabled={isLoading}
                       
                       > 
-                        <div className='text-bloack font-title p-1 pl-6 rounded-xl pr-6 bg-gradient-to-t from-white to-[#00FF62]'>Play</div>
+                        <div className='text-black font-bold p-1 pl-6 rounded-xl pr-6 bg-gradient-to-t from-white to-[#00FF62]'>Play</div>
                         </button>
                       </div>
                     </div>     
@@ -168,7 +163,7 @@ const GameSelectionUI : React.FC<GameSelectionUIProps> = ({ isLoading, selectedG
                       disabled={isLoading}
                       
                       >
-                        <div className='text-bloack font-title p-1 pl-6 rounded-xl pr-6 bg-gradient-to-t from-white to-[#00FF62]'>Play</div>
+                        <div className='text-black font-bold p-1 pl-6 rounded-xl pr-6 bg-gradient-to-t from-white to-[#00FF62]'>Play</div>
                       </button>
                       </div>
                     </div>        
@@ -193,7 +188,7 @@ const GameSelectionUI : React.FC<GameSelectionUIProps> = ({ isLoading, selectedG
                      onClick={() => onGameSelect("unity")}
                      disabled={isLoading}
                      >
-                       <div className='text-black font-title p-1 pl-6 rounded-xl pr-6 bg-gradient-to-t from-white to-[#00FF62]'>Play</div>
+                       <div className='text-black font-bold p-1 pl-6 rounded-xl pr-6 bg-gradient-to-t from-white to-[#00FF62]'>Play</div>
                      </button>
                      </div>
                    </div>
@@ -206,6 +201,14 @@ const GameSelectionUI : React.FC<GameSelectionUIProps> = ({ isLoading, selectedG
            </div>
             )}
             </div>
+            <div className='flex flex-col gap-2 z-0'>
+            <div className='flex justify-between pt-5 dark:text-white text-xl text-white'>
+                <div className='font-title'>Features games!</div>
+                
+            </div>
+        
+            </div>
+       <Slideshow/>
             </div>
             </div>
     </main>

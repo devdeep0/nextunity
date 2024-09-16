@@ -38,14 +38,15 @@ const Slideshow: React.FC = () => {
   };
 
   const slides: SlideProps[] = [
-    { imageUrl: "/slideimg/Escapethe pit.png", alt: "Image 1 description" },
-    { imageUrl: "/slideimg/TaikoxEVM2.1.png", alt: "Image 2 description" },
-    { imageUrl: "/slideimg/x_1.webp", alt: "Image 3 description" },
+    { imageUrl: "/slideimg/ChainKnight.png", alt: "Image 1 description" },
+    { imageUrl: "/slideimg/CityJump.png", alt: "Image 2 description" },
+    { imageUrl: "/slideimg/COSMICLEAP.png", alt: "Image 3 description" },
     { imageUrl: "/slideimg/Escapethe pit.png", alt: "Image 4 description" },
+    { imageUrl: "/slideimg/Trailblazer.png", alt: "Image 4 description" },
   ];
 
   return (
-    <div className="w-full max-w-4xl mx-auto mt-8 rounded-xl">
+    <div className="w-full max-w-4xl mx-auto mt-2 rounded-xl">
       <Slider {...settings}>
         {slides.map((slide, index) => (
           <Slide key={index} {...slide} />
