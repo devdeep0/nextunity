@@ -11,7 +11,7 @@ interface GameSelectionUIProps {
 }
 const GameSelectionUI : React.FC<GameSelectionUIProps> = ({ isLoading, selectedGame, onGameSelect }) => {
 
-  const [activeButton, setActiveButton] = useState('Binance Smart Chain');
+  const [activeButton, setActiveButton] = useState('');
   return (
     <>
         <Header 
