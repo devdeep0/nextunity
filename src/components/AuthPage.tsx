@@ -54,7 +54,7 @@ const GameSelectionUI : React.FC<GameSelectionUIProps> = ({ isLoading, selectedG
          </div>
 
 
-         <div className="snap-center snap-always flex-shrink-0">
+         {/* <div className="snap-center snap-always flex-shrink-0">
     <button
       onClick={() => setActiveButton('Taiko')}
       className={`p-1 pl-6 pr-6 rounded-xl  bg-gradient-to-t from-white to-[#00FF62] font-bold whitespace-nowrap ${
@@ -63,10 +63,10 @@ const GameSelectionUI : React.FC<GameSelectionUIProps> = ({ isLoading, selectedG
     >
       Taiko
     </button>
-         </div>
+         </div> */}
 
 
-         <div className="snap-center snap-always flex-shrink-0">
+         {/* <div className="snap-center snap-always flex-shrink-0">
     <button
       onClick={() => setActiveButton('TON')}
       className={`p-1 pl-6 pr-6 rounded-xl  bg-gradient-to-t from-white to-[#00FF62] font-bold whitespace-nowrap ${
@@ -75,7 +75,7 @@ const GameSelectionUI : React.FC<GameSelectionUIProps> = ({ isLoading, selectedG
     >
       TON
     </button>
-         </div>
+         </div> */}
          </div>
 
 {/* logic */}
@@ -180,7 +180,7 @@ const GameSelectionUI : React.FC<GameSelectionUIProps> = ({ isLoading, selectedG
                
                    <div className="h-[57px] w-[345px] rounded-[14px] flex items-center justify-center gap-4 bg-transparent shrink-0 bg-center " >
                      <div className='h-full w-full flex items-center gap-4'>
-                       <div className='h-full w-[57px] bg-center rounded-[14px] 'style={{backgroundImage: `url('/gameimg/ChainKnight.png')`}}></div>
+                       <div className='h-full w-[57px] bg-center rounded-[14px] 'style={{backgroundImage: `url('/gameimg/Mask group.png')`}}></div>
                        <div className='text-white  font-bold'>Trail Blazer </div>
                      </div>
                      <div>
@@ -200,6 +200,13 @@ const GameSelectionUI : React.FC<GameSelectionUIProps> = ({ isLoading, selectedG
                         
            </div>
             )}
+
+            {/* taiko */}
+            
+
+            
+
+
             </div>
             <div className='flex flex-col gap-2 z-0'>
             <div className='flex justify-between pt-5 dark:text-white text-xl text-white'>

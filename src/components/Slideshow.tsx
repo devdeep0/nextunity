@@ -35,12 +35,13 @@ const Slideshow: React.FC = () => {
     swipe: true,
     swipeToSlide: true,
     touchThreshold: 10,
+    
   };
 
   const slides: SlideProps[] = [
-    { imageUrl: "/slideimg/ChainKnight.png", alt: "Image 1 description" },
+    
     { imageUrl: "/slideimg/CityJump.png", alt: "Image 2 description" },
-    { imageUrl: "/slideimg/COSMICLEAP.png", alt: "Image 3 description" },
+
     { imageUrl: "/slideimg/Escapethe pit.png", alt: "Image 4 description" },
     { imageUrl: "/slideimg/Trailblazer.png", alt: "Image 4 description" },
   ];
