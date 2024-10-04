@@ -37,7 +37,7 @@ const GameSelectionUI : React.FC<GameSelectionUIProps> = ({ isLoading, selectedG
         activeButton === 'binance' ? 'bg-gradient-to-t from-white to-[#00FF62] text-black' : 'opacity-50 bg-transparent'
       }`}
     >
-      BSC
+      BNB
     </button>
   </div>
 
@@ -54,16 +54,16 @@ const GameSelectionUI : React.FC<GameSelectionUIProps> = ({ isLoading, selectedG
          </div>
 
 
-         {/* <div className="snap-center snap-always flex-shrink-0">
+         <div className="snap-center snap-always flex-shrink-0">
     <button
-      onClick={() => setActiveButton('Taiko')}
+      onClick={() => setActiveButton('linea')}
       className={`p-1 pl-6 pr-6 rounded-xl  bg-gradient-to-t from-white to-[#00FF62] font-bold whitespace-nowrap ${
-        activeButton === 'Taiko' ? 'bg-gradient-to-t from-white to-[#00FF62] text-black' : 'opacity-50 bg-transparent'
+        activeButton === 'linea' ? 'bg-gradient-to-t from-white to-[#00FF62] text-black' : 'opacity-50 bg-transparent'
       }`}
     >
-      Taiko
+      Linea
     </button>
-         </div> */}
+         </div>
 
 
          {/* <div className="snap-center snap-always flex-shrink-0">
@@ -192,6 +192,34 @@ const GameSelectionUI : React.FC<GameSelectionUIProps> = ({ isLoading, selectedG
                      <div>
                      <button 
                      onClick={() => onGameSelect("unity")}
+                     disabled={isLoading}
+                     >
+                       <div className='text-black font-bold p-1 pl-6 rounded-xl pr-6 bg-gradient-to-t from-white to-[#00FF62]'>Play</div>
+                     </button>
+                     </div>
+                   </div>
+
+               
+               {/*  */}
+               
+                 
+                        
+           </div>
+            )}
+
+          {activeButton === 'linea' && (
+               <div className="flex flex-col items-center w-full gap-5">
+                
+               {/*  */}
+               
+                   <div className="h-[57px] w-[345px] rounded-[14px] flex items-center justify-center gap-4 bg-transparent shrink-0 bg-center " >
+                     <div className='h-full w-full flex items-center gap-4'>
+                       <div className='h-full w-[57px] bg-center bg-cover rounded-[14px] 'style={{backgroundImage: `url('/gameimg/FruitNinjaICON.png')`}}></div>
+                       <div className='text-white  font-bold'>Fruit Ninja</div>
+                     </div>
+                     <div>
+                     <button 
+                     onClick={() => onGameSelect("unity4")}
                      disabled={isLoading}
                      >
                        <div className='text-black font-bold p-1 pl-6 rounded-xl pr-6 bg-gradient-to-t from-white to-[#00FF62]'>Play</div>
