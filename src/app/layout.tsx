@@ -13,7 +13,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" style={{ overflow: "hidden", height: "100%" }}>
+    <html lang="en" style={{ overflow: "auto", height: "100%" }}>
       <head>
         <Script
           src="https://telegram.org/js/telegram-web-app.js"
@@ -22,7 +22,7 @@ export default function RootLayout({
       </head>
       <body
         className={inter.className}
-        style={{ overflow: "hidden", height: "100%", margin: 0 }}
+        style={{ overflow: "auto", height: "100%", margin: 0 }}
       >
         <ConditionalLayout>{children}</ConditionalLayout>
       </body>
