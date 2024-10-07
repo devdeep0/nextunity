@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Script from "next/script";
 import './global.css'
-
+import ConditionalLayout from "@/components/ConditionalLayout";
 const inter = Inter({ subsets: ["latin"] });
 
 
@@ -24,7 +24,7 @@ export default function RootLayout({
         className={inter.className}
         style={{ overflow: "hidden", height: "100%", margin: 0 }}
       >
-        {children}
+        <ConditionalLayout>{children}</ConditionalLayout>
       </body>
     </html>
   );

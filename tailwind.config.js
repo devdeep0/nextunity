@@ -9,7 +9,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily:{
-        title:["Staatliches", "sans-serif"]
+        title:["Staatliches", "sans-serif"],
+        raj:["Rajdhani", 'sans-serif']
       }
     },
   },
