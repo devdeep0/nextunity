@@ -19,16 +19,16 @@ function Footer() {
 
   return (
     <>
-      {/* Conditionally render the "Coming Soon" text */}
       {showComingSoon && (
-        <motion.div animate={{ y: -20 }}>
-        <div className="text-center absolute bottom-20 mb-3 left-0 right-0 mx-auto flex items-center justify-center z-20">
-        <div className="font-bold text-[15px] bg-black border-2 border-white text-white rounded-[10px] p-2">
-        {comingSoonMessage}
-        </div>
-      </div>
-      </motion.div>
-      )}
+  <motion.div 
+    animate={{ y: -20 }} 
+    className="absolute bottom-20 left-0 right-0 mx-auto flex items-center justify-center z-20"
+  >
+    <div className="font-bold text-[15px] bg-black border-2 border-white text-white rounded-[10px] p-2">
+      {comingSoonMessage}
+    </div>
+  </motion.div>
+)}
 
       <footer className="bg-black/30 backdrop-blur-sm h-20 max-w-[calc(100vw-2rem)] mb-4 fixed bottom-0 left-4 right-4 rounded-3xl">
         <div className="h-full w-full flex gap-10 items-center justify-center">
