@@ -38,7 +38,7 @@ const GameSelectionUI : React.FC<GameSelectionUIProps> = ({ isLoading, selectedG
             <div className='flex flex-col gap-3'>
                 <div className="h-[57px] w-[345px] rounded-[14px] flex items-center justify-center gap-4 bg-transparent shrink-0 bg-center " >
                       <div className='h-full w-full flex items-center gap-4'>
-                        <div className='h-full w-[57px] bg-center rounded-[14px] 'style={{backgroundImage: `url('/gameimg/Frame 700.png')`}}></div>
+                        <div className='h-full w-[57px] bg-center rounded-[14px] bg-cover border-2 broder-white'style={{backgroundImage: `url('/gameimg/Frame_697.png')`}}></div>
                         <div className='flex flex-col justify-evenly h-full'>
                         <div className='text-white font-bold text-[12px]'>City Jump</div>
                         <div className='flex gap-1'>
@@ -73,7 +73,7 @@ const GameSelectionUI : React.FC<GameSelectionUIProps> = ({ isLoading, selectedG
 
                 <div className="h-[57px] w-[345px] rounded-[14px] flex items-center justify-center gap-4 bg-transparent shrink-0 bg-center " >
                       <div className='h-full w-full flex items-center gap-4'>
-                        <div className='h-full w-[57px] bg-center rounded-[14px] 'style={{backgroundImage: `url('/gameimg/Frame 699.png')`}}></div>
+                        <div className='h-full w-[57px] bg-center rounded-[14px] bg-cover border-2 broder-white'style={{backgroundImage: `url('/gameimg/EscapeThepit.png')`}}></div>
                         <div className='flex flex-col justify-evenly h-full'>
                         <div className='text-white font-bold text-[12px]'>Escape The Pit</div>
                         <div className='flex gap-1'>
@@ -111,7 +111,7 @@ const GameSelectionUI : React.FC<GameSelectionUIProps> = ({ isLoading, selectedG
               
                        <div className="h-[57px] w-[345px] rounded-[14px] flex items-center justify-center gap-4 bg-transparent shrink-0 bg-center " >
                       <div className='h-full w-full flex items-center gap-4'>
-                        <div className='h-full w-[57px] bg-center rounded-[14px] 'style={{backgroundImage: `url('/gameimg/unsplash_rTCDPl3C_os.png')`}}></div>
+                        <div className='h-full w-[57px] bg-center rounded-[14px] bg-cover border-2 broder-white'style={{backgroundImage: `url('/gameimg/trailblazerbnb.png')`}}></div>
                         <div className='flex flex-col justify-evenly h-full'>
                         <div className='text-white font-bold text-[12px]'>Trail Blazer</div>
                         <div className='flex gap-1'>
@@ -146,7 +146,7 @@ const GameSelectionUI : React.FC<GameSelectionUIProps> = ({ isLoading, selectedG
   
                    <div className="h-[57px] w-[345px] rounded-[14px] flex items-center justify-center gap-4 bg-transparent shrink-0 bg-center " >
                      <div className='h-full w-full flex items-center gap-4'>
-                       <div className='h-full w-[57px] bg-center rounded-[14px] 'style={{backgroundImage: `url('/gameimg/Mask group.png')`}}></div>
+                       <div className='h-full w-[57px] bg-center rounded-[14px] bg-cover border-2 broder-white'style={{backgroundImage: `url('/gameimg/TrailblazeronBASE.png')`}}></div>
                        <div className='flex flex-col justify-evenly h-full'>
                         <div className='text-white font-bold text-[12px]'>Trail Blazer</div>
                         <div className='flex gap-1 items-center'>
@@ -182,7 +182,7 @@ const GameSelectionUI : React.FC<GameSelectionUIProps> = ({ isLoading, selectedG
                
                    <div className="h-[57px] w-[345px] rounded-[14px] flex items-center justify-center gap-4 bg-transparent shrink-0 bg-center " >
                      <div className='h-full w-full flex items-center gap-4'>
-                       <div className='h-full w-[57px] bg-center bg-cover rounded-[14px] 'style={{backgroundImage: `url('/gameimg/Fruit_ninja.png')`}}></div>
+                       <div className='h-full w-[57px] bg-center bg-cover rounded-[14px] border-2 broder-white'style={{backgroundImage: `url('/gameimg/Fruit_ninja.png')`}}></div>
                        <div className='flex flex-col justify-evenly h-full'>
                         <div className='text-white font-bold text-[12px]'>Fruit Ninja</div>
                         <div className='flex gap-1 items-center'>

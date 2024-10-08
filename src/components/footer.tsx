@@ -30,7 +30,7 @@ function Footer() {
   </motion.div>
 )}
 
-      <footer className="bg-black/30 backdrop-blur-sm h-20 max-w-[calc(100vw-2rem)] mb-4 fixed bottom-0 left-4 right-4 rounded-3xl">
+      <footer className="bg-black border-t-4 border-[#40F522] backdrop-blur-sm h-20 fixed bottom-0 w-full  rounded-t-3xl">
         <div className="h-full w-full flex gap-10 items-center justify-center">
           <div>
             {/* Update onClick to show the "Coming Soon" text */}
