@@ -6,12 +6,17 @@ import './global.css'
 import ConditionalLayout from "@/components/ConditionalLayout";
 const inter = Inter({ subsets: ["latin"] });
 import React,{ Suspense } from "react";
-
+import Image from "next/image";
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const ConditionalLayout = React.lazy(() =>
+    new Promise<{ default: React.ComponentType<any> }>((resolve) => {
+      setTimeout(() => resolve(import("@/components/ConditionalLayout")), 2000);
+    })
+  );
 
   return (
     <html lang="en" style={{ overflow: "auto", height: "100%" }}>
@@ -25,7 +30,17 @@ export default function RootLayout({
         className={inter.className}
         style={{ overflow: "auto", height: "100%", margin: 0 }}
       >
-        <Suspense fallback={<div>Loading...</div>}>
+         <Suspense fallback={
+          <div className="h-screen bg-black w-full flex items-center justify-center">
+          <Image
+
+          src='/suspense/RlgifWhite.gif'
+          alt=""
+          height={500}
+          width={500}
+          />
+          </div>
+         }>
         <ConditionalLayout>{children}</ConditionalLayout>
         </Suspense>
       </body>
