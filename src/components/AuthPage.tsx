@@ -16,10 +16,10 @@ const GameSelectionUI : React.FC<GameSelectionUIProps> = ({ isLoading, selectedG
     <>
      <Header />   
 <main className='min-h-screen overflow-auto pb-24   flex flex-col w-full dark:bg-gradient-to-t from-[#0B4034] to-[#010601] bg-gradient-to-t from-[#0B4034] to-[#010601]'>  
-  <div className=' '>
-    <div className='pt-4 flex flex-col gap-2 p-5'>   
+  <div className=' w-full'>
+    <div className='pt-4 flex flex-col gap-2 p-5 w-full'>   
        
-    <div className='flex flex-col gap-2 z-0'>
+    <div className='flex flex-col gap-2 w-full z-0'>
             <div className='flex justify-between pt-5 dark:text-white text-xl text-white'>
                 <div className='font-title'>Features games!</div>
                 
@@ -35,7 +35,7 @@ const GameSelectionUI : React.FC<GameSelectionUIProps> = ({ isLoading, selectedG
           </div> </div>
            </div>
       
-            <div className='flex flex-col gap-3'>
+            <div className='flex flex-col w-full gap-3'>
                 <div className="h-[57px] w-[345px] rounded-[14px] flex items-center justify-center gap-4 bg-transparent shrink-0 bg-center " >
                       <div className='h-full w-full flex items-center gap-4'>
                         <div className='h-full w-[57px] bg-center rounded-[14px] bg-cover border-2 broder-white'style={{backgroundImage: `url('/gameimg/Frame_697.png')`}}></div>
