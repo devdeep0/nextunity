@@ -15,7 +15,7 @@ const GameSelectionUI : React.FC<GameSelectionUIProps> = ({ isLoading, selectedG
   return (
     <>
      <Header />   
-<main className='min-h-screen overflow-auto pb-24   flex flex-col w-screen dark:bg-gradient-to-t from-[#0B4034] to-[#010601] bg-gradient-to-t from-[#0B4034] to-[#010601]'>  
+<main className='min-h-screen overflow-auto pb-24   flex flex-col w-full dark:bg-gradient-to-t from-[#0B4034] to-[#010601] bg-gradient-to-t from-[#0B4034] to-[#010601]'>  
   <div className=' '>
     <div className='pt-4 flex flex-col gap-2 p-5'>   
        
@@ -182,7 +182,7 @@ const GameSelectionUI : React.FC<GameSelectionUIProps> = ({ isLoading, selectedG
                
                    <div className="h-[57px] w-[345px] rounded-[14px] flex items-center justify-center gap-4 bg-transparent shrink-0 bg-center " >
                      <div className='h-full w-full flex items-center gap-4'>
-                       <div className='h-full w-[57px] bg-center bg-cover rounded-[14px] border-2 broder-white'style={{backgroundImage: `url('/gameimg/Fruit_ninja.png')`}}></div>
+                       <div className='h-full w-[57px] bg-center bg-cover rounded-[14px] border-2 broder-white'style={{backgroundImage: `url('/gameimg/Fruit_ninja.pngFruit_ninja.png')`}}></div>
                        <div className='flex flex-col justify-evenly h-full'>
                         <div className='text-white font-bold text-[12px]'>Fruit Ninja</div>
                         <div className='flex gap-1 items-center'>
