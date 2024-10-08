@@ -45,7 +45,7 @@ function Footer() {
               }}
             />
           </div>
-          <FaHome size={30} color='white'/>
+          <FaHome size={30} color='#40F522'/>
           <RiTodoFill className="opacity-25" size={30} color="#A5A5A5"
            onClick={() => {
             setShowComingSoon(true);
