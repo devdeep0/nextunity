@@ -21,7 +21,7 @@ const GameSelectionUI : React.FC<GameSelectionUIProps> = ({ isLoading, selectedG
        
     <div className='flex flex-col gap-2 w-full z-0'>
             <div className='flex justify-between pt-5 dark:text-white text-xl text-white'>
-                <div className='font-title'>Features games!</div>
+                <div className='font-title'>Features games</div>
                 
             </div>
         
@@ -53,11 +53,6 @@ const GameSelectionUI : React.FC<GameSelectionUIProps> = ({ isLoading, selectedG
                         </div>
                       </div>
                       <div>
-                      <button 
-                      onClick={() => onGameSelect("unity3")}
-                      disabled={isLoading}
-                      
-                      > 
                       <div className='flex gap-2 items-center'>
                         <div> <Image
                           src='/chain/BNBcahin.png'
@@ -65,9 +60,14 @@ const GameSelectionUI : React.FC<GameSelectionUIProps> = ({ isLoading, selectedG
                           height={90}
                           width={90}
                           /></div>
+                      <button 
+                      onClick={() => onGameSelect("unity3")}
+                      disabled={isLoading}
+                      
+                      > 
                         <div className='text-black font-bold p-1 pl-6 rounded-xl pr-6 bg-gradient-to-t from-white to-[#00FF62]'>Play</div>
-                        </div>
                         </button>
+                        </div>
                       </div>
                     </div> 
 
@@ -89,11 +89,6 @@ const GameSelectionUI : React.FC<GameSelectionUIProps> = ({ isLoading, selectedG
                         
                       </div>
                       <div>
-                      <button 
-                      onClick={() => onGameSelect("unity5")}
-                      disabled={isLoading}
-                      
-                      >
                          <div className='flex gap-2 items-center'>
                         <div> <Image
                           src='/chain/BNBcahin.png'
@@ -101,9 +96,14 @@ const GameSelectionUI : React.FC<GameSelectionUIProps> = ({ isLoading, selectedG
                           height={90}
                           width={90}
                           /></div>
+                      <button 
+                      onClick={() => onGameSelect("unity5")}
+                      disabled={isLoading}
+                      
+                      >
                         <div className='text-black font-bold p-1 pl-6 rounded-xl pr-6 bg-gradient-to-t from-white to-[#00FF62]'>Play</div>
-                        </div>
                       </button>
+                        </div>
                       </div>
                     </div> 
                 
@@ -126,11 +126,6 @@ const GameSelectionUI : React.FC<GameSelectionUIProps> = ({ isLoading, selectedG
                         </div>
                       </div>
                       <div>
-                      <button 
-                      onClick={() => onGameSelect("unity2")}
-                      disabled={isLoading}
-                      
-                      >
                          <div className='flex gap-2 items-center'>
                         <div> <Image
                           src='/chain/BNBcahin.png'
@@ -138,9 +133,14 @@ const GameSelectionUI : React.FC<GameSelectionUIProps> = ({ isLoading, selectedG
                           height={90}
                           width={90}
                           /></div>
+                      <button 
+                      onClick={() => onGameSelect("unity2")}
+                      disabled={isLoading}
+                      
+                      >
                         <div className='text-black font-bold p-1 pl-6 rounded-xl pr-6 bg-gradient-to-t from-white to-[#00FF62]'>Play</div>
-                        </div>
                       </button>
+                        </div>
                       </div>
                     </div> 
   
@@ -161,10 +161,6 @@ const GameSelectionUI : React.FC<GameSelectionUIProps> = ({ isLoading, selectedG
                         </div>
                      </div>
                      <div>
-                     <button 
-                     onClick={() => onGameSelect("unity")}
-                     disabled={isLoading}
-                     >
                       <div className='flex gap-2 items-center'>
                         <div> <Image
                           src='/chain/base.png'
@@ -172,9 +168,13 @@ const GameSelectionUI : React.FC<GameSelectionUIProps> = ({ isLoading, selectedG
                           height={90}
                           width={90}
                           /></div>
+                     <button 
+                     onClick={() => onGameSelect("unity")}
+                     disabled={isLoading}
+                     >
                         <div className='text-black font-bold p-1 pl-6 rounded-xl pr-6 bg-gradient-to-t from-white to-[#00FF62]'>Play</div>
-                        </div>
                      </button>
+                        </div>
                      </div>
                    </div>
 
@@ -197,10 +197,6 @@ const GameSelectionUI : React.FC<GameSelectionUIProps> = ({ isLoading, selectedG
                         </div>
                      </div>
                      <div>
-                     <button 
-                     onClick={() => onGameSelect("unity4")}
-                     disabled={isLoading}
-                     >
                         <div className='flex gap-2 items-center'>
                         <div> <Image
                           src='/chain/Logomark_White.png'
@@ -208,9 +204,13 @@ const GameSelectionUI : React.FC<GameSelectionUIProps> = ({ isLoading, selectedG
                           height={90}
                           width={90}
                           /></div>
+                     <button 
+                     onClick={() => onGameSelect("unity4")}
+                     disabled={isLoading}
+                     >
                         <div className='text-black font-bold p-1 pl-6 rounded-xl pr-6 bg-gradient-to-t from-white to-[#00FF62]'>Play</div>
-                        </div>
                      </button>
+                        </div>
                      </div>
                    </div>
 
