@@ -2,8 +2,7 @@
 import GameSelectionUI from "@/components/AuthPage";
 import { useState, useCallback } from "react";
 import { useRouter } from "next/navigation";
-import Base from "@/components/Base";
-import Binance from "@/components/Binance";
+
 export default function BinanceLogin({
   searchParams,
 }: {
