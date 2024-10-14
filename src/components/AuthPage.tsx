@@ -217,9 +217,9 @@ const GameSelectionUI : React.FC<GameSelectionUIProps> = ({ isLoading, selectedG
 
                    <div className="h-[57px] w-full rounded-[14px] flex items-center justify-center gap-4 bg-transparent shrink-0 bg-center " >
                       <div className='h-full w-full flex items-center gap-4'>
-                        <div className='h-full w-[57px] bg-center rounded-[14px] bg-cover border-2 broder-white'style={{backgroundImage: `url('/gameimg/GravityTilt.png')`}}></div>
+                        <div className='h-full w-[57px] bg-center rounded-[14px] bg-cover border-2 broder-white'style={{backgroundImage: `url('/gameimg/tILTEDtAPICON.png')`}}></div>
                         <div className='flex flex-col justify-evenly h-full'>
-                        <div className='text-white font-bold text-[12px]'>Gravity Tilt</div>
+                        <div className='text-white font-bold text-[12px]'>Tilted Tap</div>
                         <div className='flex gap-1'>
                         <Image
                           src='/chain/BNBcahin.png'
@@ -250,7 +250,7 @@ const GameSelectionUI : React.FC<GameSelectionUIProps> = ({ isLoading, selectedG
                       </div>
                     </div> 
 
-                    <div className="h-[57px] w-full rounded-[14px] flex items-center justify-center gap-4 bg-transparent shrink-0 bg-center " >
+                    {/* <div className="h-[57px] w-full rounded-[14px] flex items-center justify-center gap-4 bg-transparent shrink-0 bg-center " >
                       <div className='h-full w-full flex items-center gap-4'>
                         <div className='h-full w-[57px] bg-center rounded-[14px] bg-cover border-2 broder-white'style={{backgroundImage: `url('/gameimg/GravityTilt.png')`}}></div>
                         <div className='flex flex-col justify-evenly h-full'>
@@ -283,7 +283,7 @@ const GameSelectionUI : React.FC<GameSelectionUIProps> = ({ isLoading, selectedG
                         </button>
                         </div>
                       </div>
-                    </div>
+                    </div> */}
                    </div>
             
             </div>
