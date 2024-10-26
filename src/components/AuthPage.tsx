@@ -380,22 +380,22 @@ const GameSelectionUI : React.FC<GameSelectionUIProps> = ({ isLoading, selectedG
                       <div className='h-full w-full flex items-center gap-4'>
                         <div className='h-full w-[57px] bg-center rounded-[14px] bg-cover border-2 broder-white'style={{backgroundImage: `url('/gameimg/TILTedcity.png')`}}></div>
                         <div className='flex flex-col justify-evenly h-full'>
-                        <div className='text-white font-bold text-[12px]'>testbase</div>
+                        <div className='text-white font-bold text-[12px]'>Crashy Car</div>
                         <div className='flex gap-1'>
                         <Image
-                          src='/chain/BNBcahin.png'
+                          src='/chain/OP.png'
                           alt=''
                           height={20}
                           width={20}
                           />
-                        <div className=' text-[#B3B0B8] text-[12px]'> Play on BNB</div>
+                        <div className=' text-[#B3B0B8] text-[12px]'> Play on Optimism</div>
                         </div>
                         </div>
                       </div>
                       <div>
                          <div className='flex gap-2 items-center'>
                         <div> <Image
-                          src='/chain/BNBcahin.png'
+                          src='/chain/OP.png'
                           alt=''
                           height={90}
                           width={90}
