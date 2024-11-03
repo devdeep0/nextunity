@@ -1,11 +1,16 @@
 
 
-import React, { useState } from 'react';
+"use client";
+
+import React from 'react';
 import { ChevronDown } from 'lucide-react';
 import Link from 'next/link';
+import { useConnect } from "thirdweb/react";
+import { client, wallet } from "@/app/constant";
+
 interface HeaderProps {
-  selectedChain: string;
-  setSelectedChain: (chain: string) => void;
+  selectedChain?: string;
+  setSelectedChain?: (chain: string) => void;
 }
 
 function Header() {
