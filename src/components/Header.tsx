@@ -1,17 +1,51 @@
-
-
-import React, { useState } from 'react';
-import { ChevronDown } from 'lucide-react';
-import Link from 'next/link';
-interface HeaderProps {
-  selectedChain: string;
-  setSelectedChain: (chain: string) => void;
-}
+"use client";
+import React, { useEffect, useState } from 'react';
+import { useConnect } from "thirdweb/react";
+import { inAppWallet } from "thirdweb/wallets";
+import { client, chain, wallet } from '@/app/constant';
+import { useSearchParams } from "next/navigation";
 
 function Header() {
+  const { connect } = useConnect();
+  const [address, setAddress] = useState<string>('');
+  const searchParams = useSearchParams();
+
+  useEffect(() => {
+    const getWalletAddress = async () => {
+      const signature = searchParams.get('signature') || '';
+      const message = searchParams.get('message') || '';
+      
+      if (!signature || !message) return;
+
+      try {
+        await connect(async () => {
+          const smartWallet = await wallet.connect({
+            client,
+            chain,
+            strategy: "auth_endpoint",
+            payload: JSON.stringify({
+              signature,
+              message,
+            }),
+            encryptionKey: process.env.NEXT_PUBLIC_AUTH_PHRASE as string,
+          });
+          
+          if (smartWallet && 'address' in smartWallet) {
+            setAddress(smartWallet.address);
+          }
+          return wallet;
+        });
+      } catch (error) {
+        console.error('Error connecting wallet:', error);
+      }
+    };
+
+    getWalletAddress();
+  }, [connect, searchParams]);
   return (
     <header className='h-24 z-20 p-5 w-full relative bg-black'>
-        <div className='flex flex-row items-center justify-center  dark:text-white text-white'>
+      <div className='flex flex-row items-center justify-between dark:text-white text-white px-4'>
+        <div className='flex items-center'>
         <div><svg width="80" height="80" viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path fill-rule="evenodd" clip-rule="evenodd" d="M28.3671 21.2133C26.9545 21.225 25.7295 22.2149 25.4318 23.5959L18.0389 57.8962C18.0232 57.9691 18.0103 58.0418 18 58.1142L77.9549 59.8965C81.7659 55.0231 90.4522 40.4668 78.73 27.2043C72.8764 22.0012 69.9548 21.2705 59.3945 21.036C57.7105 20.9986 54.951 20.993 53.2666 21.007C49.9298 21.0348 42.9533 21.0927 28.3671 21.2133ZM28.2931 63.4992L83.6188 64.7513C83.7346 65.5335 83.4554 66.3796 82.6595 67.0267C81.6823 67.8212 80.5836 68.6324 79.3955 69.3779C78.2798 70.078 77.6258 71.3585 77.8482 72.6567L82.4411 99.4719C82.757 101.316 81.3367 103 79.4659 103H60.6968C59.2277 103 57.972 101.942 57.7222 100.495L53.5565 76.3466C53.3367 75.0728 52.2318 74.1421 50.9392 74.1421C49.6862 74.1421 48.6036 75.0179 48.3419 76.2433L43.1372 100.612C42.8397 102.005 41.6094 103 40.1852 103H23.1281C21.2068 103 19.7744 101.229 20.1763 99.35L27.5375 64.9388C27.6564 64.3829 27.9239 63.8904 28.2931 63.4992ZM96.0806 65.0334L118.791 65.5474L116.616 76.3215C116.238 78.1908 117.668 79.9374 119.575 79.9374H129.473C131.391 79.9374 132.822 81.702 132.427 83.5784L128.839 100.604C128.544 102 127.312 103 125.885 103H91.5386C89.612 103 88.1784 101.22 88.5896 99.3373L96.059 65.1416C96.0669 65.1055 96.0741 65.0694 96.0806 65.0334ZM109.955 60.8478L86.1366 60.1397C85.6992 59.4877 85.5114 58.663 85.6957 57.8176L92.9621 24.4791C93.2644 23.0922 94.492 22.1034 95.9114 22.1034H112.907C114.834 22.1034 116.267 23.8839 115.856 25.7662L108.854 57.8161C108.593 59.0107 109.075 60.1643 109.955 60.8478ZM46.4014 43.6498C45.0495 43.6498 43.8784 44.5871 43.5823 45.9061C43.1759 47.7169 44.5576 49.4358 46.4134 49.4281L56.9758 49.3841C58.6901 49.3841 61.5867 47.9062 60.5226 44.7139C59.9906 43.5323 59.5177 43.5327 56.9758 43.6498H46.4014Z" fill="white"/>
 <path d="M129.392 128.483C129.332 128.483 129.303 128.453 129.303 128.394V125.875C129.303 125.816 129.332 125.786 129.392 125.786H131.91C131.97 125.786 131.999 125.816 131.999 125.875V128.394C131.999 128.453 131.97 128.483 131.91 128.483H129.392Z" fill="white"/>
@@ -28,8 +62,14 @@ function Header() {
 <path d="M18.0891 128.483C18.0297 128.483 18 128.446 18 128.372L18.0446 113.061C18.0446 113.001 18.0743 112.971 18.1337 112.971H22.6356C23.438 112.971 24.1734 113.172 24.842 113.573C25.5255 113.959 26.0678 114.487 26.469 115.155C26.8701 115.809 27.0707 116.552 27.0707 117.384C27.0707 117.934 26.989 118.432 26.8256 118.877C26.6621 119.308 26.469 119.68 26.2461 119.992C26.0232 120.289 25.8227 120.512 25.6444 120.66C26.4467 121.552 26.8479 122.599 26.8479 123.803L26.8701 128.372C26.8701 128.446 26.833 128.483 26.7587 128.483H24.2403C24.1809 128.483 24.1512 128.461 24.1512 128.416V123.803C24.1512 123.268 23.958 122.807 23.5717 122.421C23.2002 122.02 22.7397 121.819 22.1899 121.819H20.719L20.6967 128.372C20.6967 128.446 20.667 128.483 20.6076 128.483H18.0891ZM20.719 119.145H22.6356C23.0962 119.145 23.5048 118.974 23.8614 118.632C24.218 118.29 24.3963 117.874 24.3963 117.384C24.3963 116.909 24.218 116.5 23.8614 116.158C23.5197 115.817 23.1111 115.646 22.6356 115.646H20.719V119.145Z" fill="white"/>
 </svg></div>
         </div>
+        {address && (
+          <div className='text-sm font-mono truncate max-w-[200px]'>
+            {address}
+          </div>
+        )}
+      </div>
     </header>
-)
+  );
 }
 
-export default Header
+export default Header;
