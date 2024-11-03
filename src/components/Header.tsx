@@ -42,7 +42,7 @@ function TelegramLoginContent() {
                     });
                     return wallet;
                 });
-                router.replace("/");
+               
                 return true;
             } catch (error) {
                 console.error('Connection error:', error);
