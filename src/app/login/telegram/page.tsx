@@ -2,6 +2,7 @@
 import GameSelectionUI from "@/components/AuthPage";
 import { useState, useCallback } from "react";
 import { useRouter } from "next/navigation";
+
 export default function BinanceLogin({
   searchParams,
 }: {
@@ -18,7 +19,6 @@ export default function BinanceLogin({
       signature: searchParams.signature,
       message: searchParams.message,
     });
-    localStorage.setItem('auth_payload', payload);
     router.push(`/${game}?payload=${encodeURIComponent(payload)}`);
   }, [searchParams.signature, searchParams.message, router]);
 
