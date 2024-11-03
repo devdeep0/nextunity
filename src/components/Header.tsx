@@ -10,54 +10,54 @@ import { Loader2 } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
 function TelegramLoginContent() {
-  const searchParams = useSearchParams();
-  const { connect } = useConnect();
-  const router = useRouter();
-  const [params, setParams] = useState({ signature: '', message: '' });
+    const searchParams = useSearchParams();
+    const { connect } = useConnect();
+    const router = useRouter();
+    const [params, setParams] = useState({ signature: '', message: '' });
 
-  useEffect(() => {
-      const signature = searchParams.get('signature') || '';
-      const message = searchParams.get('message') || '';
-      setParams({ signature, message });
-      console.log('SearchParams:', { signature, message });
-  }, [searchParams]);
+    useEffect(() => {
+        const signature = searchParams.get('signature') || '';
+        const message = searchParams.get('message') || '';
+        setParams({ signature, message });
+        console.log('SearchParams:', { signature, message });
+    }, [searchParams]);
 
-  useQuery({
-      queryKey: ["telegram-login", params.signature, params.message],
-      queryFn: async () => {
-          if (!params.signature || !params.message) {
-              console.error('Missing signature or message');
-              return false;
-          }
-          try {
-              await connect(async () => {
-                  await wallet.connect({
-                      client,
-                      strategy: "auth_endpoint",
-                      payload: JSON.stringify({
-                          signature: params.signature,
-                          message: params.message,
-                      }),
-                      encryptionKey: process.env.NEXT_PUBLIC_AUTH_PHRASE as string,
-                  });
-                  return wallet;
-              });
-              
-              return true;
-          } catch (error) {
-              console.error('Connection error:', error);
-              return false;
-          }
-      },
-      enabled: !!params.signature && !!params.message,
-  });
+    useQuery({
+        queryKey: ["telegram-login", params.signature, params.message],
+        queryFn: async () => {
+            if (!params.signature || !params.message) {
+                console.error('Missing signature or message');
+                return false;
+            }
+            try {
+                await connect(async () => {
+                    await wallet.connect({
+                        client,
+                        strategy: "auth_endpoint",
+                        payload: JSON.stringify({
+                            signature: params.signature,
+                            message: params.message,
+                        }),
+                        encryptionKey: process.env.NEXT_PUBLIC_AUTH_PHRASE as string,
+                    });
+                    return wallet;
+                });
+                
+                return true;
+            } catch (error) {
+                console.error('Connection error:', error);
+                return false;
+            }
+        },
+        enabled: !!params.signature && !!params.message,
+    });
 
-  return (
-      <div className="w-screen h-screen flex flex-col gap-2 items-center justify-center">
-          <Loader2 className="h-12 w-12 animate-spin text-white" />
-          Generating wallet...
-      </div>
-  );
+    return (
+        <div className="flex items-center gap-2">
+            <Loader2 className="h-6 w-6 animate-spin text-white" />
+            <span className="text-white">Generating wallet...</span>
+        </div>
+    );
 }
 
 function Header() {
