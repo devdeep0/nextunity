@@ -7,6 +7,8 @@ import ConditionalLayout from "@/components/ConditionalLayout";
 const inter = Inter({ subsets: ["latin"] });
 import React,{ Suspense } from "react";
 import Image from "next/image";
+import Providers from "./Providers";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -41,7 +43,8 @@ export default function RootLayout({
           />
           </div>
          }>
-        <ConditionalLayout>{children}</ConditionalLayout>
+        <ConditionalLayout>
+        <Providers>{children}</Providers></ConditionalLayout>
         </Suspense>
       </body>
     </html>

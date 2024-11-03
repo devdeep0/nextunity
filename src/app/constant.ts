@@ -22,3 +22,8 @@ export const wallet = inAppWallet({
 		chain: chain
 	}
 });
+
+export const accountAbstraction: SmartWalletOptions = {
+	chain,
+	sponsorGas: true,
+};
