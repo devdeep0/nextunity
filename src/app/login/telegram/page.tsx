@@ -1,30 +1,31 @@
 "use client";
 import GameSelectionUI from "@/components/AuthPage";
-import { Suspense, useState, useCallback } from "react";
+import { useState, useCallback } from "react";
 import { useRouter } from "next/navigation";
+import { Suspense, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import { useQuery } from "@tanstack/react-query";
 import { useConnect } from "thirdweb/react";
 import { client, wallet } from "@/app/constant";
-import { Loader2 } from 'lucide-react';
+import { Loader2 } from "lucide-react";
 
-interface LoginParams {
-    signature: string;
-    message: string;
-}
-
-interface TelegramLoginContentProps {
-    searchParams: LoginParams;
-}
-
-function TelegramLoginContent({ searchParams }: TelegramLoginContentProps) {
+function TelegramLoginContent() {
+    const searchParams = useSearchParams();
     const { connect } = useConnect();
-    
-    console.log('SearchParams in TelegramLoginContent:', searchParams);
+    const router = useRouter();
+    const [params, setParams] = useState({ signature: '', message: '' });
+
+    useEffect(() => {
+        const signature = searchParams.get('signature') || '';
+        const message = searchParams.get('message') || '';
+        setParams({ signature, message });
+        console.log('SearchParams:', { signature, message });
+    }, [searchParams]);
 
     useQuery({
-        queryKey: ["telegram-login", searchParams.signature, searchParams.message],
+        queryKey: ["telegram-login", params.signature, params.message],
         queryFn: async () => {
-            if (!searchParams.signature || !searchParams.message) {
+            if (!params.signature || !params.message) {
                 console.error('Missing signature or message');
                 return false;
             }
@@ -34,20 +35,21 @@ function TelegramLoginContent({ searchParams }: TelegramLoginContentProps) {
                         client,
                         strategy: "auth_endpoint",
                         payload: JSON.stringify({
-                            signature: searchParams.signature,
-                            message: searchParams.message,
+                            signature: params.signature,
+                            message: params.message,
                         }),
                         encryptionKey: process.env.NEXT_PUBLIC_AUTH_PHRASE as string,
                     });
                     return wallet;
                 });
+                router.replace("/");
                 return true;
             } catch (error) {
                 console.error('Connection error:', error);
                 return false;
             }
         },
-        enabled: !!searchParams.signature && !!searchParams.message,
+        enabled: !!params.signature && !!params.message,
     });
 
     return (
@@ -58,37 +60,36 @@ function TelegramLoginContent({ searchParams }: TelegramLoginContentProps) {
     );
 }
 
-interface TelegramLoginProps {
-    searchParams: LoginParams;
-}
 
-export default function TelegramLogin({ searchParams }: TelegramLoginProps) {
-    const router = useRouter();
-    const [isLoading, setIsLoading] = useState(false);
-    const [selectedGame, setSelectedGame] = useState("");
+export default function BinanceLogin({
+  searchParams,
+}: {
+  searchParams: { signature: string; message: string };
+}) {
+  const router = useRouter();
+  const [isLoading, setIsLoading] = useState(false);
+  const [selectedGame, setSelectedGame] = useState("");
 
-    console.log('SearchParams in TelegramLogin:', searchParams);
+  const handleRedirect = useCallback((game: string) => {
+    setIsLoading(true);
+    setSelectedGame(game);
+    const payload = JSON.stringify({
+      signature: searchParams.signature,
+      message: searchParams.message,
+    });
+    router.push(`/${game}?payload=${encodeURIComponent(payload)}`);
+  }, [searchParams.signature, searchParams.message, router]);
 
-    const handleRedirect = useCallback((game: string) => {
-        setIsLoading(true);
-        setSelectedGame(game);
-        const payload = JSON.stringify({
-            signature: searchParams.signature,
-            message: searchParams.message,
-        });
-        router.push(`/${game}?payload=${encodeURIComponent(payload)}`);
-    }, [searchParams.signature, searchParams.message, router]);
-
-    return (
-        <>
-            <Suspense fallback={<div>Loading...</div>}>
-                <TelegramLoginContent searchParams={searchParams} />
-                <GameSelectionUI
-                    isLoading={isLoading}
-                    selectedGame={selectedGame}
-                    onGameSelect={handleRedirect}
-                />
-            </Suspense>
-        </>
-    );
+  return (
+   <>
+   <Suspense fallback={<div>Loading...</div>}>
+            <TelegramLoginContent />
+        </Suspense>
+<GameSelectionUI
+ isLoading={isLoading}
+ selectedGame={selectedGame}
+ onGameSelect={handleRedirect}
+/>
+   </>
+  );
 }
