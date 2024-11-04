@@ -81,7 +81,9 @@ export default function BinanceLogin({
 
   return (
    <>
-  
+   <Suspense fallback={<div>Loading...</div>}>
+            <TelegramLoginContent />
+        </Suspense>
 <GameSelectionUI
  isLoading={isLoading}
  selectedGame={selectedGame}
