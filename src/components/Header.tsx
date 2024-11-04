@@ -36,15 +36,15 @@ function Header() {
  </svg></div>
         
  <AutoConnect client={client} wallets={[wallet]}/>
- <div className="flex justify-center mb-20">
+ <div className="flex justify-center mb-20 items-center h-full">
           {account ? 
             (
             <> 
-            <Button onClick={() => (window as any).Telegram.WebApp.openLink(`https://etherscan.io/address/${account.address}`)} className="inline-flex items-center gap-2 rounded-md bg-gray-700 py-1.5 px-3 text-sm/6 font-semibold text-white shadow-inner shadow-white/10 focus:outline-none data-[hover]:bg-gray-600 data-[open]:bg-gray-700 data-[focus]:outline-1 data-[focus]:outline-white">Smart Account: {shortenAddress(account.address)}</Button>  
+            <Button onClick={() => (window as any).Telegram.WebApp.openLink(`https://etherscan.io/address/${account.address}`)} className="inline-flex items-center gap-2 rounded-md bg-gray-700 py-1.5 px-3 text-sm/6 font-semibold text-white shadow-inner shadow-white/10 focus:outline-none data-[hover]:bg-gray-600 data-[open]:bg-gray-700 data-[focus]:outline-1 data-[focus]:outline-white">{shortenAddress(account.address)}</Button>  
             </>
             ) 
           : (
-              <p className="text-sm text-zinc-400">Smart Account Not Connected</p>
+              <p className="text-sm text-zinc-400">fetching smart account</p>
             )}      
         </div>
 
