@@ -1,66 +1,20 @@
 "use client";
 
 import React, { Suspense } from 'react';
-import { useSearchParams } from "next/navigation";
-import { useQuery } from "@tanstack/react-query";
-import { useConnect } from "thirdweb/react";
-import { useRouter } from "next/navigation";
+
+import Image from "next/image";
+import { useActiveAccount } from "thirdweb/react";
+import thirdwebIcon from "@public/thirdweb.svg";
+import { shortenAddress } from "thirdweb/utils";
+import { Button } from "@headlessui/react";
 import { client, wallet } from "@/app/constant";
-import { Loader2 } from 'lucide-react';
-import { useEffect, useState } from 'react';
+import { AutoConnect } from "thirdweb/react";
+import Link from "next/link";
 
-function TelegramLoginContent() {
-    const searchParams = useSearchParams();
-    const { connect } = useConnect();
-    const router = useRouter();
-    const [params, setParams] = useState({ signature: '', message: '' });
 
-    useEffect(() => {
-        const signature = searchParams.get('signature') || '';
-        const message = searchParams.get('message') || '';
-        setParams({ signature, message });
-        console.log('SearchParams:', { signature, message });
-    }, [searchParams]);
-
-    useQuery({
-        queryKey: ["telegram-login", params.signature, params.message],
-        queryFn: async () => {
-            if (!params.signature || !params.message) {
-                console.error('Missing signature or message');
-                return false;
-            }
-            try {
-                await connect(async () => {
-                    await wallet.connect({
-                        client,
-                        strategy: "auth_endpoint",
-                        payload: JSON.stringify({
-                            signature: params.signature,
-                            message: params.message,
-                        }),
-                        encryptionKey: process.env.NEXT_PUBLIC_AUTH_PHRASE as string,
-                    });
-                    return wallet;
-                });
-                
-                return true;
-            } catch (error) {
-                console.error('Connection error:', error);
-                return false;
-            }
-        },
-        enabled: !!params.signature && !!params.message,
-    });
-
-    return (
-        <div className="flex items-center gap-2">
-            <Loader2 className="h-6 w-6 animate-spin text-white" />
-            <span className="text-white">Generating wallet...</span>
-        </div>
-    );
-}
 
 function Header() {
+    const account = useActiveAccount();
     return (
         <header className='h-24 z-20 p-5 w-full relative bg-black'>
             <div className='flex flex-row items-center justify-between'>
@@ -79,9 +33,18 @@ function Header() {
  <path d="M32.8526 128.706C32.0651 128.706 31.3371 128.505 30.6685 128.104C29.9999 127.688 29.465 127.138 29.0638 126.455C28.6775 125.771 28.4844 125.021 28.4844 124.204L28.5289 113.061C28.5289 113.001 28.5587 112.971 28.6181 112.971H31.1142C31.1736 112.971 31.2034 113.001 31.2034 113.061V124.204C31.2034 124.709 31.3594 125.14 31.6714 125.497C31.9983 125.838 32.392 126.009 32.8526 126.009C33.328 126.009 33.7218 125.838 34.0338 125.497C34.3607 125.14 34.5241 124.709 34.5241 124.204V113.061C34.5241 113.001 34.5538 112.971 34.6132 112.971H37.1094C37.1688 112.971 37.1985 113.001 37.1985 113.061L37.2431 124.204C37.2431 125.036 37.0425 125.794 36.6413 126.477C36.255 127.161 35.7276 127.703 35.059 128.104C34.4052 128.505 33.6698 128.706 32.8526 128.706Z" fill="white"/>
  <path d="M18.0891 128.483C18.0297 128.483 18 128.446 18 128.372L18.0446 113.061C18.0446 113.001 18.0743 112.971 18.1337 112.971H22.6356C23.438 112.971 24.1734 113.172 24.842 113.573C25.5255 113.959 26.0678 114.487 26.469 115.155C26.8701 115.809 27.0707 116.552 27.0707 117.384C27.0707 117.934 26.989 118.432 26.8256 118.877C26.6621 119.308 26.469 119.68 26.2461 119.992C26.0232 120.289 25.8227 120.512 25.6444 120.66C26.4467 121.552 26.8479 122.599 26.8479 123.803L26.8701 128.372C26.8701 128.446 26.833 128.483 26.7587 128.483H24.2403C24.1809 128.483 24.1512 128.461 24.1512 128.416V123.803C24.1512 123.268 23.958 122.807 23.5717 122.421C23.2002 122.02 22.7397 121.819 22.1899 121.819H20.719L20.6967 128.372C20.6967 128.446 20.667 128.483 20.6076 128.483H18.0891ZM20.719 119.145H22.6356C23.0962 119.145 23.5048 118.974 23.8614 118.632C24.218 118.29 24.3963 117.874 24.3963 117.384C24.3963 116.909 24.218 116.5 23.8614 116.158C23.5197 115.817 23.1111 115.646 22.6356 115.646H20.719V119.145Z" fill="white"/>
  </svg></div>
-                <Suspense fallback={<div className="text-white">Loading...</div>}>
-                    <TelegramLoginContent />
-                </Suspense>
+ <AutoConnect client={client} wallets={[wallet]}/>
+        <div className="flex justify-center mb-20">
+          {account ? 
+            (
+            <> 
+            <Button onClick={() => (window as any).Telegram.WebApp.openLink(`https://etherscan.io/address/${account.address}`)} className="inline-flex items-center gap-2 rounded-md bg-gray-700 py-1.5 px-3 text-sm/6 font-semibold text-white shadow-inner shadow-white/10 focus:outline-none data-[hover]:bg-gray-600 data-[open]:bg-gray-700 data-[focus]:outline-1 data-[focus]:outline-white">Smart Account: {shortenAddress(account.address)}</Button>  
+            </>
+            ) 
+          : (
+              <p className="text-sm text-zinc-400">Smart Account Not Connected</p>
+            )}      
+        </div>
             </div>
         </header>
     );
