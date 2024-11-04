@@ -19,7 +19,9 @@ export const chain = baseSepolia;
 export const wallet = inAppWallet({
 	smartAccount: {
 		sponsorGas: true,
-		chain: chain
+		chain: chain,
+		factoryAddress:'0x38151385e800D468093FAfA597C56aC4f718bf3f',
+		gasless:true
 	}
 });
 

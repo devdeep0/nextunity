@@ -1,14 +1,15 @@
 "use client";
 
 import React, { Suspense } from 'react';
-
+import { createWallet, inAppWallet } from "thirdweb/wallets";
+import { AutoConnect } from "thirdweb/react";
 import Image from "next/image";
 import { useActiveAccount } from "thirdweb/react";
 import thirdwebIcon from "@public/thirdweb.svg";
 import { shortenAddress } from "thirdweb/utils";
 import { Button } from "@headlessui/react";
 import { client, wallet } from "@/app/constant";
-import { AutoConnect } from "thirdweb/react";
+
 import Link from "next/link";
 
 
