@@ -11,7 +11,7 @@ import { client, wallet } from "@/app/constant";
 import { AutoConnect } from "thirdweb/react";
 import Link from "next/link";
 
-function page() {
+function MainHeader() {
   const account = useActiveAccount();
   return (
     
@@ -32,4 +32,4 @@ function page() {
   )
 }
 
-export default page
+export default MainHeader
