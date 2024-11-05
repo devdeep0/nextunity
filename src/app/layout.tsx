@@ -14,12 +14,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const ConditionalLayout = React.lazy(() =>
-    new Promise<{ default: React.ComponentType<any> }>((resolve) => {
-      setTimeout(() => resolve(import("@/components/ConditionalLayout")), 2000);
-    })
-  );
-
   return (
     <html lang="en" style={{ overflow: "auto", height: "100%" }}>
       <head>
