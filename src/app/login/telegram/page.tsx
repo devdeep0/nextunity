@@ -14,7 +14,13 @@ function TelegramLoginContent() {
     const { connect } = useConnect();
     const router = useRouter();
     const [params, setParams] = useState({ signature: '', message: '' });
-
+    useEffect(() => {
+        const signature = searchParams.get('signature') || '';
+        const message = searchParams.get('message') || '';
+        if (signature && message) {
+            localStorage.setItem('telegramAuth', JSON.stringify({ signature, message }));
+        }
+    }, [searchParams]);
     useEffect(() => {
         const signature = searchParams.get('signature') || '';
         const message = searchParams.get('message') || '';
@@ -53,7 +59,7 @@ function TelegramLoginContent() {
     });
 
     return (
-        <div className="h-screen bg-black w-full flex items-center justify-center">
+        <div className="h-screen bg-black w-full flex items-start justify-start">
           <Image
           src='/suspense/RlgifWhite.gif'
           alt=""

@@ -1,61 +1,43 @@
-"use client"
-import { useState, useCallback, useEffect } from "react"
-import { useRouter, useSearchParams } from "next/navigation"
-import GameSelectionUI from "@/components/AuthPage"
-
+"use client";
+import GameSelectionUI from "@/components/AuthPage";
+import { useState, useCallback, useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 export default function GamePage() {
-  const router = useRouter()
-  const searchParams = useSearchParams()
-  const [isLoading, setIsLoading] = useState(false)
-  const [selectedGame, setSelectedGame] = useState("")
-  const [error, setError] = useState<string | null>(null)
-
-  // Get params from URL on component mount
-  const signature = searchParams.get("signature")
-  const message = searchParams.get("message")
-
-  // Validate required parameters
-  useEffect(() => {
-    if (!signature || !message) {
-      setError("Missing required authentication parameters")
-      // Optionally redirect to login
-      // router.push('/login')
-    }
-  }, [signature, message])
-
-  const handleRedirect = useCallback(
-    (game: string) => {
-      try {
-        setIsLoading(true)
-        setSelectedGame(game)
-
-        if (!signature || !message) {
-          throw new Error("Authentication parameters are required")
+    const router = useRouter();
+    const [isLoading, setIsLoading] = useState(false);
+    const [selectedGame, setSelectedGame] = useState("");
+    const [authData, setAuthData] = useState<{signature: string, message: string} | null>(null);
+    
+    useEffect(() => {
+        const stored = localStorage.getItem('telegramAuth');
+        if (stored) {
+            setAuthData(JSON.parse(stored));
+        } else {
+            // Redirect back to login if no auth data
+            router.push('/login/telegram');
         }
+    }, [router]);
 
+    const handleRedirect = useCallback((game: string) => {
+        if (!authData) return;
+        
+        setIsLoading(true);
+        setSelectedGame(game);
         const payload = JSON.stringify({
-          signature,
-          message,
-        })
+            signature: authData.signature,
+            message: authData.message,
+        });
+        router.push(`/${game}?payload=${encodeURIComponent(payload)}`);
+    }, [authData, router]);
 
-        router.push(`/${game}?payload=${encodeURIComponent(payload)}`)
-      } catch (err) {
-        setError(err instanceof Error ? err.message : "An error occurred")
-        setIsLoading(false)
-      }
-    },
-    [signature, message, router]
-  )
+    if (!authData) return null; // Or loading spinner
 
-  // If there's an error, show it
-  
-
-  return (
-    <GameSelectionUI
-      isLoading={isLoading}
-      selectedGame={selectedGame}
-      onGameSelect={handleRedirect}
-    />
-  )
+    return (
+        <GameSelectionUI
+            isLoading={isLoading}
+            selectedGame={selectedGame}
+            onGameSelect={handleRedirect}
+        />
+    );
 }
