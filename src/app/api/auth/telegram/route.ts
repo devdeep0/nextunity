@@ -55,7 +55,7 @@ async function verifyTelegram(signature: string, message: string) {
   const userId = await verifyTelegram(signature, message);
 
   if (!userId) {
-    return NextResponse.json({ error: "Invalid credentials"+ "signature " + signature + "message" + message }, { status: 401 });
+    return NextResponse.json({ error: "Invalid credentials"+ "signature " + signature + "message" + message+"done" }, { status: 401 });
   }
 
   return NextResponse.json({ userId });
