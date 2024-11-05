@@ -40,7 +40,7 @@ function TelegramLoginContent() {
                         }),
                         encryptionKey: process.env.NEXT_PUBLIC_AUTH_PHRASE as string,
                     });
-                 router.replace("/")
+                    router.replace("/");
                     return wallet;
                 });
                 return true;
@@ -82,7 +82,7 @@ export default function BinanceLogin({
 
   return (
    <>
-    <Suspense fallback={<div>Loading...</div>}>
+   <Suspense fallback={<div>Loading...</div>}>
             <TelegramLoginContent />
         </Suspense>
 <GameSelectionUI
