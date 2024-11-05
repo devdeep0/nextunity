@@ -53,10 +53,14 @@ function TelegramLoginContent() {
     });
 
     return (
-        <div className="w-screen h-screen flex flex-col gap-2 items-center justify-center">
-            <Loader2 className="h-12 w-12 animate-spin text-white" />
-            Generating wallet...
-        </div>
+        <div className="h-screen bg-black w-full flex items-center justify-center">
+          <Image
+          src='/suspense/RlgifWhite.gif'
+          alt=""
+          height={500}
+          width={500}
+          />
+          </div>
     );
 }
 
