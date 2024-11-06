@@ -1,5 +1,4 @@
-"use client";
-import GameSelectionUI from "@/components/AuthPage";
+"use client"
 import { useState, useCallback } from "react";
 import { useRouter } from "next/navigation";
 import { Suspense, useEffect } from "react";
@@ -8,13 +7,20 @@ import { useQuery } from "@tanstack/react-query";
 import { useConnect } from "thirdweb/react";
 import { client, wallet } from "@/app/constant";
 import { Loader2 } from "lucide-react";
+import Image from "next/image";
 
 function TelegramLoginContent() {
     const searchParams = useSearchParams();
     const { connect } = useConnect();
     const router = useRouter();
     const [params, setParams] = useState({ signature: '', message: '' });
-
+    useEffect(() => {
+        const signature = searchParams.get('signature') || '';
+        const message = searchParams.get('message') || '';
+        if (signature && message) {
+            localStorage.setItem('telegramAuth', JSON.stringify({ signature, message }));
+        }
+    }, [searchParams]);
     useEffect(() => {
         const signature = searchParams.get('signature') || '';
         const message = searchParams.get('message') || '';
@@ -40,7 +46,7 @@ function TelegramLoginContent() {
                         }),
                         encryptionKey: process.env.NEXT_PUBLIC_AUTH_PHRASE as string,
                     });
-                    router.replace("/");
+                    router.replace("/gamepage");
                     return wallet;
                 });
                 return true;
@@ -53,43 +59,35 @@ function TelegramLoginContent() {
     });
 
     return (
-        <div className="w-screen h-screen flex flex-col gap-2 items-center justify-center">
-            <Loader2 className="h-12 w-12 animate-spin text-white" />
-            Generating wallet...
-        </div>
+        <div className="h-screen bg-black w-full flex items-start justify-start">
+          <Image
+          src='/suspense/RlgifWhite.gif'
+          alt=""
+          height={500}
+          width={500}
+          />
+          </div>
     );
 }
 
 
-export default function BinanceLogin({
-  searchParams,
-}: {
-  searchParams: { signature: string; message: string };
-}) {
-  const router = useRouter();
-  const [isLoading, setIsLoading] = useState(false);
-  const [selectedGame, setSelectedGame] = useState("");
-
-  const handleRedirect = useCallback((game: string) => {
-    setIsLoading(true);
-    setSelectedGame(game);
-    const payload = JSON.stringify({
-      signature: searchParams.signature,
-      message: searchParams.message,
-    });
-    router.push(`/${game}?payload=${encodeURIComponent(payload)}`);
-  }, [searchParams.signature, searchParams.message, router]);
+export default function BinanceLogin () {
 
   return (
    <>
-   <Suspense fallback={<div>Loading...</div>}>
+   <Suspense fallback={
+          <div className="h-screen bg-black w-full flex items-center justify-center">
+          <Image
+          src='/suspense/RlgifWhite.gif'
+          alt=""
+          height={500}
+          width={500}
+          />
+          </div>
+         }>
             <TelegramLoginContent />
         </Suspense>
-<GameSelectionUI
- isLoading={isLoading}
- selectedGame={selectedGame}
- onGameSelect={handleRedirect}
-/>
+
    </>
   );
 }
