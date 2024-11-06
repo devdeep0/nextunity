@@ -46,7 +46,7 @@ function TelegramLoginContent() {
                         }),
                         encryptionKey: process.env.NEXT_PUBLIC_AUTH_PHRASE as string,
                     });
-                    router.replace("/gamepage");
+                    router.replace("/");
                     return wallet;
                 });
                 return true;
