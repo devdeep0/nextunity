@@ -17,7 +17,7 @@ const GameSelectionUI : React.FC<GameSelectionUIProps> = ({ isLoading, selectedG
     <>
      <Header />   
     
-<main className='min-h-screen overflow-auto pb-24   flex flex-col w-full dark:bg-gradient-to-t from-[#0B4034] to-[#010601] bg-gradient-to-t from-[#0B4034] to-[#010601]'>  
+<main className='min-h-screen overflow-auto pb-24   flex flex-col w-full dark:bg-black bg-black'>  
   <div className=' w-full'>
     <div className='pt-4 flex flex-col gap-2 p-5 w-full'>   
        
