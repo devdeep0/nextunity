@@ -1,3 +1,5 @@
+
+
 "use client";
 import GameSelectionUI from "@/components/AuthPage";
 import { useState, useCallback, useEffect } from "react";
@@ -41,3 +43,20 @@ export default function GamePage() {
         />
     );
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

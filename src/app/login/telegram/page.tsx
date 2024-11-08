@@ -60,12 +60,12 @@ function TelegramLoginContent() {
 
     return (
         <div className="h-screen bg-black w-full flex items-center justify-center">
-          <Image
-          src='/suspense/RlgifWhite.gif'
-          alt=""
-          height={500}
-          width={500}
-          />
+           <Image
+        src="/suspense/RlgifWhite.gif"
+        alt=""
+        fill
+        className="object-contain"  // Use "object-cover" to fill and crop if needed
+    />
           </div>
     );
 }

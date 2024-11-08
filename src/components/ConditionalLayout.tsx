@@ -24,7 +24,7 @@ const ConditionalLayout = ({ children }: { children: React.ReactNode }) => {
     <>
      
       {children}
-      {!isUnityRoute && <Footer />}
+      {!isUnityRoute }
      
     </>
   );

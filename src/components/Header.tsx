@@ -36,19 +36,38 @@ function Header() {
  </svg></div>
         
  <AutoConnect client={client} wallets={[wallet]}/>
- <div className="flex justify-center mb-20 items-center h-full">
+ <div className="flex justify-center items-center h-full pr-2">
+ {/* <Button className="inline-flex items-center gap-2 rounded-[4px] font-raj underline underline-offset-4 decoration-[#19AE00] decoration-4 decoration-solid bg-transparent border-2 border-white py-1.5 px-3 text-sm/6 font-semibold text-white shadow-inner shadow-white/10 focus:outline-none data-[hover]:bg-gray-600 data-[open]:bg-gray-700 data-[focus]:outline-1 data-[focus]:outline-white">0x181871415415418148</Button>   */}
+
           {account ? 
             (
             <> 
-            <Button onClick={() => (window as any).Telegram.WebApp.openLink(`https://etherscan.io/address/${account.address}`)} className="inline-flex items-center gap-2 rounded-md bg-gray-700 py-1.5 px-3 text-sm/6 font-semibold text-white shadow-inner shadow-white/10 focus:outline-none data-[hover]:bg-gray-600 data-[open]:bg-gray-700 data-[focus]:outline-1 data-[focus]:outline-white">{shortenAddress(account.address)}</Button>  
+            <Button onClick={() => (window as any).Telegram.WebApp.openLink(`https://etherscan.io/address/${account.address}`)} className="inline-flex items-center gap-2 rounded-[4px] font-raj underline underline-offset-4 decoration-[#19AE00] decoration-4 decoration-solid bg-transparent border-2 border-white py-1.5 px-3 text-sm/6 font-semibold text-white shadow-inner shadow-white/10 focus:outline-none data-[hover]:bg-gray-600 data-[open]:bg-gray-700 data-[focus]:outline-1 data-[focus]:outline-white">{shortenAddress(account.address)}</Button>  
             </>
             ) 
           : (
               <p className="text-sm text-zinc-400">fetching smart account</p>
             )}      
-        </div>
 
+        </div>
+        <div className='absolute right-0 '>
+            <Image
+                 src='/ui/PLAY.png'
+                 alt=''
+                 height={30}
+                 width={30}
+                 />
             </div>
+            </div>
+            <div className='absolute -bottom-11 right-0 '>
+                <Image
+                 src='/ui/DIagonal_2.png'
+                 alt=''
+                 height={150}
+                 width={150}
+                 />
+            </div>
+            
         </header>
     );
 }
