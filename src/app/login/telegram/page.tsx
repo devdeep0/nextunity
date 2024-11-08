@@ -59,7 +59,7 @@ function TelegramLoginContent() {
     });
 
     return (
-        <div className="h-screen bg-black w-full flex items-start justify-start">
+        <div className="h-screen bg-black w-full flex items-center justify-center">
           <Image
           src='/suspense/RlgifWhite.gif'
           alt=""
