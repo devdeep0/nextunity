@@ -50,27 +50,22 @@ const GameSelectionUI : React.FC<GameSelectionUIProps> = ({ isLoading, selectedG
                 <div className="h-[57px] w-full rounded-[14px] flex items-center justify-center gap-4 bg-transparent shrink-0 bg-center " >
                       <div className='h-full w-full flex items-center gap-4'>
                         <div className='h-full w-[57px] bg-center rounded-[14px] bg-cover border-2 broder-white'style={{backgroundImage: `url('/gameimg/Frame_697.png')`}}></div>
-                        <div className='flex flex-col justify-evenly h-full'>
-                        <div className='text-white font-bold text-[12px]'>City Jump</div>
-                        <div className='flex gap-1'>
+                        <div className='flex flex-col justify-center gap-0 h-full'>
+                        <div className='text-white font-bold text-[14px]'>City Jump</div>
+                        <div className='flex gap-1 items-center'>
+                        <div className=' text-[#B3B0B8] text-[12px]'> Play on BNB</div>
                         <Image
                           src='/chain/BNBcahin.png'
                           alt=''
-                          height={20}
-                          width={20}
+                          height={19}
+                          width={19}
                           />
-                        <div className=' text-[#B3B0B8] text-[12px]'> Play on BNB</div>
                         </div>
                         </div>
                       </div>
                       <div>
                       <div className='flex gap-2 items-center justify-center'>
-                        <div> <Image
-                          src='/chain/BNBcahin.png'
-                          alt=''
-                          height={90}
-                          width={90}
-                          /></div>
+                       
                       <button 
                       onClick={() => onGameSelect("unity3")}
                       disabled={isLoading}
@@ -87,28 +82,23 @@ const GameSelectionUI : React.FC<GameSelectionUIProps> = ({ isLoading, selectedG
                 <div className="h-[57px] w-full rounded-[14px] flex items-center justify-center gap-4 bg-transparent shrink-0 bg-center " >
                       <div className='h-full w-full flex items-center gap-4'>
                         <div className='h-full w-[57px] bg-center rounded-[14px] bg-cover border-2 broder-white'style={{backgroundImage: `url('/gameimg/EscapeThepit.png')`}}></div>
-                        <div className='flex flex-col justify-evenly h-full'>
-                        <div className='text-white font-bold text-[12px]'>Escape The Pit</div>
-                        <div className='flex gap-1'>
+                        <div className='flex flex-col justify-center gap-0 h-full'>
+                        <div className='text-white font-bold text-[14px]'>Escape The Pit</div>
+                        <div className='flex gap-1 items-center'>
+                        <div className=' text-[#B3B0B8] text-[12px]'> Play on BNB</div>
                         <Image
                           src='/chain/BNBcahin.png'
                           alt=''
-                          height={20}
-                          width={20}
+                          height={19}
+                          width={19}
                           />
-                        <div className=' text-[#B3B0B8] text-[12px]'> Play on BNB</div>
                         </div>
                         </div>
                         
                       </div>
                       <div>
                          <div className='flex gap-2 items-center'>
-                        <div> <Image
-                          src='/chain/BNBcahin.png'
-                          alt=''
-                          height={90}
-                          width={90}
-                          /></div>
+                        
                       <button 
                       onClick={() => onGameSelect("unity5")}
                       disabled={isLoading}
@@ -126,27 +116,22 @@ const GameSelectionUI : React.FC<GameSelectionUIProps> = ({ isLoading, selectedG
                        <div className="h-[57px] w-full rounded-[14px] flex items-center justify-center gap-4 bg-transparent shrink-0 bg-center " >
                       <div className='h-full w-full flex items-center gap-4'>
                         <div className='h-full w-[57px] bg-center rounded-[14px] bg-cover border-2 broder-white'style={{backgroundImage: `url('/gameimg/trailblazerbnb.png')`}}></div>
-                        <div className='flex flex-col justify-evenly h-full'>
-                        <div className='text-white font-bold text-[12px]'>Trail Blazer</div>
-                        <div className='flex gap-1'>
+                        <div className='flex flex-col justify-center gap-0 h-full'>
+                        <div className='text-white font-bold text-[14px]'>Trail Blazer</div>
+                        <div className='flex gap-1 items-center'>
+                        <div className=' text-[#B3B0B8] text-[12px]'> Play on BNB</div>
                         <Image
                           src='/chain/BNBcahin.png'
                           alt=''
-                          height={20}
-                          width={20}
+                          height={19}
+                          width={19}
                           />
-                        <div className=' text-[#B3B0B8] text-[12px]'> Play on BNB</div>
                         </div>
                         </div>
                       </div>
                       <div>
                          <div className='flex gap-2 items-center'>
-                        <div> <Image
-                          src='/chain/BNBcahin.png'
-                          alt=''
-                          height={90}
-                          width={90}
-                          /></div>
+                       
                       <button 
                       onClick={() => onGameSelect("unity2")}
                       disabled={isLoading}
@@ -161,27 +146,22 @@ const GameSelectionUI : React.FC<GameSelectionUIProps> = ({ isLoading, selectedG
                    <div className="h-[57px] w-full rounded-[14px] flex items-center justify-center gap-4 bg-transparent shrink-0 bg-center " >
                      <div className='h-full w-full flex items-center gap-4'>
                        <div className='h-full w-[57px] bg-center rounded-[14px] bg-cover border-2 broder-white'style={{backgroundImage: `url('/gameimg/TrailblazeronBASE.png')`}}></div>
-                       <div className='flex flex-col justify-evenly h-full'>
-                        <div className='text-white font-bold text-[12px]'>Trail Blazer</div>
+                       <div className='flex flex-col justify-center gap-0 h-full'>
+                        <div className='text-white font-bold text-[14px]'>Trail Blazer</div>
                         <div className='flex gap-1 items-center'>
+                        <div className=' text-[#B3B0B8] text-[12px]'> Play on Base</div>
                         <Image
                           src='/chain/base.png'
                           alt=''
-                          height={20}
-                          width={20}
+                          height={19}
+                          width={19}
                           />
-                        <div className=' text-[#B3B0B8] text-[12px]'> Play on Base</div>
                         </div>
                         </div>
                      </div>
                      <div>
                       <div className='flex gap-2 items-center'>
-                        <div> <Image
-                          src='/chain/base.png'
-                          alt=''
-                          height={90}
-                          width={90}
-                          /></div>
+                        
                      <button 
                      onClick={() => onGameSelect("unity")}
                      disabled={isLoading}
@@ -196,27 +176,22 @@ const GameSelectionUI : React.FC<GameSelectionUIProps> = ({ isLoading, selectedG
                    <div className="h-[57px] w-full rounded-[14px] flex items-center justify-center gap-4 bg-transparent shrink-0 bg-center " >
                      <div className='h-full w-full flex items-center gap-4'>
                        <div className='h-full w-[57px] bg-center bg-cover rounded-[14px] border-2 broder-white'style={{backgroundImage: `url('/gameimg/Fruit_ninja.png')`}}></div>
-                       <div className='flex flex-col justify-evenly h-full'>
-                        <div className='text-white font-bold text-[12px]'>Taiko Runner</div>
+                       <div className='flex flex-col justify-center gap-0 h-full'>
+                        <div className='text-white font-bold text-[14px]'>Taiko Runner</div>
                         <div className='flex gap-1 items-center'>
+                        <div className=' text-[#B3B0B8] text-[12px]'> Play on Linea</div>
                         <Image
                           src='/chain/Logomark_White.png'
                           alt=''
-                          height={20}
-                          width={20}
+                          height={19}
+                          width={19}
                           />
-                        <div className=' text-[#B3B0B8] text-[12px]'> Play on Linea</div>
                         </div>
                         </div>
                      </div>
                      <div>
                         <div className='flex gap-2 items-center'>
-                        <div> <Image
-                          src='/chain/Logomark_White.png'
-                          alt=''
-                          height={90}
-                          width={90}
-                          /></div>
+                       
                      <button 
                      onClick={() => onGameSelect("unity4")}
                      disabled={isLoading}
@@ -269,27 +244,22 @@ const GameSelectionUI : React.FC<GameSelectionUIProps> = ({ isLoading, selectedG
                     <div className="h-[57px] w-full rounded-[14px] flex items-center justify-center gap-4 bg-transparent shrink-0 bg-center " >
                       <div className='h-full w-full flex items-center gap-4'>
                         <div className='h-full w-[57px] bg-center rounded-[14px] bg-cover border-2 broder-white'style={{backgroundImage: `url('/gameimg/Escapethe pitKroma.png')`}}></div>
-                        <div className='flex flex-col justify-evenly h-full'>
-                        <div className='text-white font-bold text-[12px]'>Escape The Pit</div>
-                        <div className='flex gap-1'>
+                        <div className='flex flex-col justify-center gap-0 h-full'>
+                        <div className='text-white font-bold text-[14px]'>Escape The Pit</div>
+                        <div className='flex gap-1 items-center'>
+                        <div className=' text-[#B3B0B8] text-[12px]'> Play on Kroma</div>
                         <Image
                           src='/chain/KRO.png'
                           alt=''
-                          height={20}
-                          width={20}
+                          height={19}
+                          width={19}
                           />
-                        <div className=' text-[#B3B0B8] text-[12px]'> Play on Kroma</div>
                         </div>
                         </div>
                       </div>
                       <div>
                       <div className='flex gap-2 items-center justify-center'>
-                        <div> <Image
-                          src='/chain/KRO.png'
-                          alt=''
-                          height={90}
-                          width={90}
-                          /></div>
+                        
                       <button 
                       onClick={() => onGameSelect("unity7")}
                       disabled={isLoading}
@@ -306,27 +276,22 @@ const GameSelectionUI : React.FC<GameSelectionUIProps> = ({ isLoading, selectedG
                     <div className="h-[57px] w-full rounded-[14px] flex items-center justify-center gap-4 bg-transparent shrink-0 bg-center " >
                       <div className='h-full w-full flex items-center gap-4'>
                         <div className='h-full w-[57px] bg-center rounded-[14px] bg-cover border-2 broder-white'style={{backgroundImage: `url('/gameimg/TILTedcity.png')`}}></div>
-                        <div className='flex flex-col justify-evenly h-full'>
-                        <div className='text-white font-bold text-[12px]'>Tilted City</div>
-                        <div className='flex gap-1'>
+                        <div className='flex flex-col justify-center gap-0 h-full'>
+                        <div className='text-white font-bold text-[14px]'>Tilted City</div>
+                        <div className='flex gap-1 items-center'>
+                        <div className=' text-[#B3B0B8] text-[12px]'> Play on BNB</div>
                         <Image
                           src='/chain/BNBcahin.png'
                           alt=''
                           height={20}
                           width={20}
                           />
-                        <div className=' text-[#B3B0B8] text-[12px]'> Play on BNB</div>
                         </div>
                         </div>
                       </div>
                       <div>
                          <div className='flex gap-2 items-center'>
-                        <div> <Image
-                          src='/chain/BNBcahin.png'
-                          alt=''
-                          height={90}
-                          width={90}
-                          /></div>
+                        
                       <button 
                       onClick={() => onGameSelect("unity8")}
                       disabled={isLoading}
@@ -382,27 +347,22 @@ const GameSelectionUI : React.FC<GameSelectionUIProps> = ({ isLoading, selectedG
                     <div className="h-[57px] w-full rounded-[14px] flex items-center justify-center gap-4 bg-transparent shrink-0 bg-center " >
                       <div className='h-full w-full flex items-center gap-4'>
                         <div className='h-full w-[57px] bg-center rounded-[14px] bg-cover border-2 broder-white'style={{backgroundImage: `url('/gameimg/Frame_1244831258.png')`}}></div>
-                        <div className='flex flex-col justify-evenly h-full'>
-                        <div className='text-white font-bold text-[12px]'>Crashy Car</div>
-                        <div className='flex gap-1'>
+                        <div className='flex flex-col justify-center gap-0 h-full'>
+                        <div className='text-white font-bold text-[14px]'>Crashy Car</div>
+                        <div className='flex gap-1 items-center'>
+                        <div className=' text-[#B3B0B8] text-[12px]'> Play on Optimism</div>
                         <Image
                           src='/chain/OP.png'
                           alt=''
                           height={20}
                           width={20}
                           />
-                        <div className=' text-[#B3B0B8] text-[12px]'> Play on Optimism</div>
                         </div>
                         </div>
                       </div>
                       <div>
                          <div className='flex gap-2 items-center'>
-                        <div> <Image
-                          src='/chain/OP.png'
-                          alt=''
-                          height={90}
-                          width={90}
-                          /></div>
+                        
                       <button 
                       onClick={() => onGameSelect("unity10")}
                       disabled={isLoading}
