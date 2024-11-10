@@ -57,8 +57,8 @@ const GameSelectionUI : React.FC<GameSelectionUIProps> = ({ isLoading, selectedG
                         <Image
                           src='/chain/BNBcahin.png'
                           alt=''
-                          height={19}
-                          width={19}
+                          height={17}
+                          width={17}
                           />
                         </div>
                         </div>
@@ -89,8 +89,8 @@ const GameSelectionUI : React.FC<GameSelectionUIProps> = ({ isLoading, selectedG
                         <Image
                           src='/chain/BNBcahin.png'
                           alt=''
-                          height={19}
-                          width={19}
+                          height={17}
+                          width={17}
                           />
                         </div>
                         </div>
@@ -123,8 +123,8 @@ const GameSelectionUI : React.FC<GameSelectionUIProps> = ({ isLoading, selectedG
                         <Image
                           src='/chain/BNBcahin.png'
                           alt=''
-                          height={19}
-                          width={19}
+                          height={17}
+                          width={17}
                           />
                         </div>
                         </div>
@@ -153,8 +153,8 @@ const GameSelectionUI : React.FC<GameSelectionUIProps> = ({ isLoading, selectedG
                         <Image
                           src='/chain/base.png'
                           alt=''
-                          height={19}
-                          width={19}
+                          height={17}
+                          width={17}
                           />
                         </div>
                         </div>
@@ -183,8 +183,8 @@ const GameSelectionUI : React.FC<GameSelectionUIProps> = ({ isLoading, selectedG
                         <Image
                           src='/chain/Logomark_White.png'
                           alt=''
-                          height={19}
-                          width={19}
+                          height={17}
+                          width={17}
                           />
                         </div>
                         </div>
@@ -251,8 +251,8 @@ const GameSelectionUI : React.FC<GameSelectionUIProps> = ({ isLoading, selectedG
                         <Image
                           src='/chain/KRO.png'
                           alt=''
-                          height={19}
-                          width={19}
+                          height={17}
+                          width={17}
                           />
                         </div>
                         </div>
@@ -283,8 +283,8 @@ const GameSelectionUI : React.FC<GameSelectionUIProps> = ({ isLoading, selectedG
                         <Image
                           src='/chain/BNBcahin.png'
                           alt=''
-                          height={20}
-                          width={20}
+                          height={17}
+                          width={17}
                           />
                         </div>
                         </div>
@@ -354,8 +354,8 @@ const GameSelectionUI : React.FC<GameSelectionUIProps> = ({ isLoading, selectedG
                         <Image
                           src='/chain/OP.png'
                           alt=''
-                          height={20}
-                          width={20}
+                          height={17}
+                          width={17}
                           />
                         </div>
                         </div>
