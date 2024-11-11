@@ -177,7 +177,7 @@ const GameSelectionUI : React.FC<GameSelectionUIProps> = ({ isLoading, selectedG
                      <div className='h-full w-full flex items-center gap-4'>
                        <div className='h-full w-[57px] bg-center bg-cover rounded-[14px] border-2 broder-white'style={{backgroundImage: `url('/gameimg/TaikoBlock.png')`}}></div>
                        <div className='flex flex-col justify-center gap-0 h-full'>
-                        <div className='text-white font-bold text-[14px]'>Taiko Block</div>
+                        <div className='text-white font-bold text-[14px]'>Taiko Runner</div>
                         <div className='flex gap-1 items-center'>
                         <div className=' text-[#B3B0B8] text-[12px]'> Play on Taiko</div>
                         <Image
