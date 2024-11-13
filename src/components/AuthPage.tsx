@@ -334,7 +334,7 @@ const GameSelectionUI : React.FC<GameSelectionUIProps> = ({ isLoading, selectedG
                       disabled={isLoading}
                       
                       >
-                        <div className='text-black font-bold p-1 pl-6 rounded-xl pr-6 bg-gradient-to-t from-white to-[#00FF62]'>Play</div>
+                        <div className='border-2 border-white font-semibold p-1 pl-6 rounded-[8px] text-[12px] pr-6 bg-transparent text-white'>Play</div>
                       </button>
                         </div>
                       </div>
