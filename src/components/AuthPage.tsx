@@ -323,12 +323,6 @@ const GameSelectionUI : React.FC<GameSelectionUIProps> = ({ isLoading, selectedG
                       </div>
                       <div>
                          <div className='flex gap-2 items-center'>
-                        <div> <Image
-                          src='/chain/BNBcahin.png'
-                          alt=''
-                          height={90}
-                          width={90}
-                          /></div>
                       <button 
                       onClick={() => onGameSelect("unity9")}
                       disabled={isLoading}
