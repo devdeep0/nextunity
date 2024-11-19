@@ -203,12 +203,12 @@ const GameSelectionUI : React.FC<GameSelectionUIProps> = ({ isLoading, selectedG
 
 
 
-              {/* game 6 = tilted tap  */}
-                   {/* <div className="h-[57px] w-full rounded-[14px] flex items-center justify-center gap-4 bg-transparent shrink-0 bg-center " >
+              {/* game 6 = Pixel Bounce  */}
+                   <div className="h-[57px] w-full rounded-[14px] flex items-center justify-center gap-4 bg-transparent shrink-0 bg-center " >
                       <div className='h-full w-full flex items-center gap-4'>
                         <div className='h-full w-[57px] bg-center rounded-[14px] bg-cover border-2 broder-white'style={{backgroundImage: `url('/gameimg/tILTEDtAPICON.png')`}}></div>
                         <div className='flex flex-col justify-evenly h-full'>
-                        <div className='text-white font-bold text-[12px]'>Tilted Tap</div>
+                        <div className='text-white font-bold text-[12px]'>Pixel Bounce</div>
                         <div className='flex gap-1'>
                         <Image
                           src='/chain/BNBcahin.png'
@@ -237,7 +237,7 @@ const GameSelectionUI : React.FC<GameSelectionUIProps> = ({ isLoading, selectedG
                         </button>
                         </div>
                       </div>
-                    </div>  */}
+                    </div> 
 
 
               {/* game 7  = escape the pit */}
