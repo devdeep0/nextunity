@@ -19,7 +19,7 @@ const CHAIN_ID = 10;
 
 function Header() {
     const account = useActiveAccount();
-    const [balance, setBalance] = useState<string >('0')
+    const [balance, setBalance] = useState(0)
     const fetchBalance = async () => {
       if (!account) return;
   
