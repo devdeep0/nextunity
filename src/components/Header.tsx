@@ -1,6 +1,6 @@
 "use client";
 
-import React, { Suspense,useState } from 'react';
+import React, { Suspense,useState, useEffect } from 'react';
 import { createWallet, inAppWallet } from "thirdweb/wallets";
 import { AutoConnect } from "thirdweb/react";
 import Image from "next/image";
@@ -43,6 +43,9 @@ function Header() {
         console.error("Error fetching balance:", error);
       }
     };
+    useEffect(() => {
+      fetchBalance();
+  }, [account]); 
   
     return (
         <header className='h-24 z-20 p-5 w-full relative bg-black'>
@@ -70,12 +73,12 @@ function Header() {
           {account ? 
             (
             <> 
+            <div className=' flex flex-row'>
             <Button onClick={() => (window as any).Telegram.WebApp.openLink(`https://etherscan.io/address/${account.address}`)} className="inline-flex items-center gap-2 rounded-[4px] font-raj underline underline-offset-4 decoration-[#19AE00] decoration-4 decoration-solid bg-transparent border-2 border-white py-1.5 px-3 text-sm/6 font-semibold text-white shadow-inner shadow-white/10 focus:outline-none data-[hover]:bg-gray-600 data-[open]:bg-gray-700 data-[focus]:outline-1 data-[focus]:outline-white">{shortenAddress(account.address)}</Button>  
             <div>
           <p className='text-white'>Balance: {balance}</p>
-          <button onClick={fetchBalance} className="bg-blue-500 text-white px-4 py-2 rounded">
-            Fetch Balance
-          </button>
+          
+        </div>
         </div>
             </>
             ) 
