@@ -23,7 +23,7 @@ function Header() {
     const fetchBalance = async () => {
       if (!account) return;
   
-      const url = `${API_BASE_URL}/contract/${CHAIN_ID}/${CONTRACT_ADDRESS}/erc20/balance-of?wallet_address=${account}`;
+      const url = `${API_BASE_URL}/contract/${CHAIN_ID}/${CONTRACT_ADDRESS}/erc20/balance-of?wallet_address=${account.address}`;
   
       try {
         const response = await fetch(url, {
