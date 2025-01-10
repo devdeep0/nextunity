@@ -38,6 +38,6 @@ export async function GET() {
     return NextResponse.json({ holders });
   } catch (error) {
     console.error('Error fetching holders:', error);
-    return NextResponse.json({ error: 'Failed to fetch holders' }, { status: 500 });
+    return NextResponse.json({ error: 'Failed to fetch holders', errors : error }, { status: 500 });
   }
 }
