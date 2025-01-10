@@ -11,35 +11,39 @@ import { Button } from "@headlessui/react";
 import { client, wallet } from "@/app/constant";
 
 import Link from "next/link";
-
+const API_BASE_URL = "https://c227651d.engine-usw2.thirdweb.com";
+const AUTH_TOKEN = `Bearer eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiIweDQ4RTk1MUUzM0M1ZUZDOEYyQTc3MUE1ZDUzZTdEZEVhMjYzNTVCRTgiLCJzdWIiOiIweDI5NzY5ZTA0Mjc1Nzk1Yzg3NDQ2QzdFZTEwMTAyMUM2YTY3NUNGMDYiLCJhdWQiOiJ0aGlyZHdlYi5jb20iLCJleHAiOjQ4ODQ1NTg1MTksIm5iZiI6MTczMDk1ODUxOSwiaWF0IjoxNzMwOTU4NTE5LCJqdGkiOiIwZjc5ZTZmMC1lZGIxLTQ5ZWUtYWRjNC01Mzc4ODYzYTg0ZTEiLCJjdHgiOnsicGVybWlzc2lvbnMiOiJBRE1JTiJ9fQ.MHg3YzJiNTQ2MDcyODk2ZjBiZDI3OTdiNDQ3Yjk0YTI4MDkxYmViOTJjZDAxMmMxZGM3ZGQwMzE1MzYwZDc2ZGU2NjcwZmE0YzRkMGE1MGNjZmQxMmM3OWYzY2IyM2E1OWNiN2NkOTAxODljZmEyNzMyMWUwNTJjY2VmYTRhOGMxZDFi`;
+const CONTRACT_ADDRESS = "0x0F49C6E6F9Ff7DD867e5B89fF1Fe0aeEE105A435";
+const CHAIN_ID = 10;
 
 
 function Header() {
     const account = useActiveAccount();
     const [balance, setBalance] = useState<string >('0')
-    async function fetchBalance() {
-        try {
-          const response = await fetch(
-            `https://c227651d.engine-usw2.thirdweb.com/contract/10/0x0F49C6E6F9Ff7DD867e5B89fF1Fe0aeEE105A435/erc20/balance-of?wallet_address=${account}`,
-            {
-              method: "GET",
-              headers: {
-                Authorization: `Bearer eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiIweDQ4RTk1MUUzM0M1ZUZDOEYyQTc3MUE1ZDUzZTdEZEVhMjYzNTVCRTgiLCJzdWIiOiIweDI5NzY5ZTA0Mjc1Nzk1Yzg3NDQ2QzdFZTEwMTAyMUM2YTY3NUNGMDYiLCJhdWQiOiJ0aGlyZHdlYi5jb20iLCJleHAiOjQ4ODQ1NTg1MTksIm5iZiI6MTczMDk1ODUxOSwiaWF0IjoxNzMwOTU4NTE5LCJqdGkiOiIwZjc5ZTZmMC1lZGIxLTQ5ZWUtYWRjNC01Mzc4ODYzYTg0ZTEiLCJjdHgiOnsicGVybWlzc2lvbnMiOiJBRE1JTiJ9fQ.MHg3YzJiNTQ2MDcyODk2ZjBiZDI3OTdiNDQ3Yjk0YTI4MDkxYmViOTJjZDAxMmMxZGM3ZGQwMzE1MzYwZDc2ZGU2NjcwZmE0YzRkMGE1MGNjZmQxMmM3OWYzY2IyM2E1OWNiN2NkOTAxODljZmEyNzMyMWUwNTJjY2VmYTRhOGMxZDFi`,
-              },
-            }
-          );
-    
-          if (!response.ok) {
-            throw new Error(`Failed to fetch balance: ${response.statusText}`);
-          }
-    
-          const data = await response.json();
-          setBalance(data.result.displayValue);
-          console.log("Balance data:", data);
-        } catch (error) {
-          console.error("Error fetching balance:", error);
+    const fetchBalance = async () => {
+      if (!account) return;
+  
+      const url = `${API_BASE_URL}/contract/${CHAIN_ID}/${CONTRACT_ADDRESS}/erc20/balance-of?wallet_address=${account}`;
+  
+      try {
+        const response = await fetch(url, {
+          method: "GET",
+          headers: {
+            Authorization: AUTH_TOKEN,
+          },
+        });
+  
+        if (!response.ok) {
+          throw new Error(`Failed to fetch balance: ${response.statusText}`);
         }
+  
+        const data = await response.json();
+        setBalance(data.result.displayValue);
+      } catch (error) {
+        console.error("Error fetching balance:", error);
       }
+    };
+  
     return (
         <header className='h-24 z-20 p-5 w-full relative bg-black'>
             <div className='flex flex-row items-center justify-between'>
@@ -67,9 +71,12 @@ function Header() {
             (
             <> 
             <Button onClick={() => (window as any).Telegram.WebApp.openLink(`https://etherscan.io/address/${account.address}`)} className="inline-flex items-center gap-2 rounded-[4px] font-raj underline underline-offset-4 decoration-[#19AE00] decoration-4 decoration-solid bg-transparent border-2 border-white py-1.5 px-3 text-sm/6 font-semibold text-white shadow-inner shadow-white/10 focus:outline-none data-[hover]:bg-gray-600 data-[open]:bg-gray-700 data-[focus]:outline-1 data-[focus]:outline-white">{shortenAddress(account.address)}</Button>  
-            {/* <div className="text-white text-sm mt-1">
-                                    Balance: {parseFloat(balance).toFixed(4)} odc.
-                                </div> */}
+            <div>
+          <p>Balance: {balance}</p>
+          <button onClick={fetchBalance} className="bg-blue-500 text-white px-4 py-2 rounded">
+            Fetch Balance
+          </button>
+        </div>
             </>
             ) 
           : (
