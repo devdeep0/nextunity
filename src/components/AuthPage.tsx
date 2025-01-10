@@ -377,7 +377,7 @@ const GameSelectionUI : React.FC<GameSelectionUIProps> = ({ isLoading, selectedG
             
             </div>
            
-         <Footer/>  
+  
     </main>
    
     </>

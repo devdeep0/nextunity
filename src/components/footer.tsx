@@ -17,6 +17,14 @@ function Footer() {
     }
   }, [showComingSoon]);
 
+  const getIconColor = (iconName:any) => {
+    return Active === iconName ? "#40F522" : "#A5A5A5";
+  };
+
+  const getIconOpacity = (iconName:any) => {
+    return Active === iconName ? "opacity-100" : "opacity-25";
+  };
+
   return (
     <>
       {showComingSoon && (
@@ -34,18 +42,16 @@ function Footer() {
         <div className="h-full w-full flex gap-10 items-center justify-center">
           <div>
             {/* Update onClick to show the "Coming Soon" text */}
+            <Link href='/leaderboard'>
             <FaChartSimple
               className="opacity-25"
               color="#A5A5A5"
               size={30}
-              onClick={() => {
-                setShowComingSoon(true);
-                setComingSoonMessage("Leaderboard Coming Soon");
-                setActive("chart");
-              }}
+              
             />
+            </Link>
           </div>
-          <FaHome size={30} color='#40F522'/>
+          <Link href='/gamepage'><FaHome size={30} color='#40F522'/></Link>
           <RiTodoFill className="opacity-25" size={30} color="#A5A5A5"
            onClick={() => {
             setShowComingSoon(true);

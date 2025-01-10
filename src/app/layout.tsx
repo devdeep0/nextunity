@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ["latin"] });
 import React,{ Suspense } from "react";
 import Image from "next/image";
 import Providers from "./Providers";
-
+import Footer from "@/components/footer";
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -38,7 +38,7 @@ export default function RootLayout({
           </div>
          }>
         <ConditionalLayout>
-        <Providers>{children}</Providers></ConditionalLayout>
+        <Providers>{children}       <Footer/>  </Providers></ConditionalLayout>
         </Suspense>
       </body>
     </html>
